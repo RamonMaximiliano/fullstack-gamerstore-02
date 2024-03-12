@@ -26,7 +26,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 /*
 
 VIDEO 1:
-- Sandwhich menu
 - Goodle Auth
 - Next auth
 - Regular auth
