@@ -29,7 +29,7 @@ VIDEO 1:
 - Goodle Auth
 - Next auth
 - Regular auth
-- Database
+- Database 
 
 
 */
