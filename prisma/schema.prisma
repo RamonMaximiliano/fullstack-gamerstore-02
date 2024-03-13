@@ -17,19 +17,19 @@ model Category {
   id       String    @id @default(uuid())
   name     String
   slug     String
-  imageURL String
+  imageUrl String
   products Product[]
 }
 
 model Product {
   id                 String   @id @default(uuid())
-  categoryID         String
-  category           Category @relation(fields: [categoryID], references: [id])
+  categoryId         String
+  category           Category @relation(fields: [categoryId], references: [id])
   name               String
   slug               String
   description        String
   basePrice          Decimal  @db.Decimal(8, 2) //Usually this is the default declaration for price values
-  imageURL           String
+  imageUrls          String[]
   discountPercentage Int      @default(0)
 }
 

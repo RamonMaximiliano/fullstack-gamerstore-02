@@ -28,11 +28,14 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
-VIDEO 1:
-- Goodle Auth
-- Next auth
-- Regular auth
+VIDEO 2:
+
+
 - Database 
+
+
+
+
 
 
 */

@@ -33,7 +33,7 @@ export default function Header() {
         <>
             {/*SIDE MENU START*/}
             {menu &&
-                <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2">
+                <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200">
                     <div className="flex justify-end p-2 duration-200">
                         <RxCross2 size={20} onClick={() => handleMenu()} />
                     </div>
