@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlinePercentage } from "react-icons/ai";
-import { MdLogout } from "react-icons/md";
+import { CiLogin } from "react-icons/ci";
+import { CiLogout } from "react-icons/ci";
 import { FiHome } from "react-icons/fi";
 import { GrCatalog } from "react-icons/gr";
 import { RxCross2 } from "react-icons/rx";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Header() {
+    const { status, data } = useSession();
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
         if (menu) {
@@ -16,6 +19,14 @@ export default function Header() {
         } else {
             setMenu(true)
         }
+    }
+
+    const handleLogin = () => {
+        signIn();
+    }
+    const handleLogOut = () => {
+        signOut();
+        setMenu(false)
     }
 
     return (
@@ -29,14 +40,32 @@ export default function Header() {
                     <div className="flex w-11/12 p-1 mx-auto items-center mb-1 rounded-sm text-xl">
                         <h1>Menu</h1>
                     </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
-                        <p>User Pic</p>
-                        <p>User Name</p>
-                    </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm">
-                        <MdLogout size={18} className="mr-3" />
-                        <p>Fazer Logout</p>
-                    </div>
+                    {status === "authenticated" && data.user && (
+                        <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
+                            <img src={String(data.user.image)} className="rounded-full w-1/5 mr-4"></img>
+                            <p className="text-wrap">{data.user.name!}</p>
+                        </div>
+                    )
+                    }
+
+                    {status === "unauthenticated" &&
+                        (
+                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm" onClick={() => handleLogin()}>
+                                <CiLogin size={19} className="mr-3" />
+                                <p>Fazer Login</p>
+                            </div>
+                        )
+                    }
+
+                    {status === "authenticated" &&
+                        (
+                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm" onClick={() => handleLogOut()}>
+                                <CiLogout size={18} className="mr-3" />
+                                <p>Fazer Logout</p>
+                            </div>
+                        )
+                    }
+
                     <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
                         <FiHome size={18} className="mr-3" />
                         <p>Início</p>
