@@ -35,7 +35,7 @@ export default function Header() {
             {menu &&
                 <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200">
                     <div className="flex justify-end p-2 duration-200">
-                        <RxCross2 size={20} onClick={() => handleMenu()} />
+                        <RxCross2 size={20} onClick={() => handleMenu()} className="cursor-pointer"/>
                     </div>
                     <div className="flex w-11/12 p-1 mx-auto items-center mb-1 rounded-sm text-xl">
                         <h1>Menu</h1>
@@ -50,7 +50,7 @@ export default function Header() {
 
                     {status === "unauthenticated" &&
                         (
-                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm" onClick={() => handleLogin()}>
+                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm cursor-pointer" onClick={() => handleLogin()}>
                                 <CiLogin size={19} className="mr-3" />
                                 <p>Fazer Login</p>
                             </div>
@@ -59,22 +59,22 @@ export default function Header() {
 
                     {status === "authenticated" &&
                         (
-                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm" onClick={() => handleLogOut()}>
+                            <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm cursor-pointer" onClick={() => handleLogOut()}>
                                 <CiLogout size={18} className="mr-3" />
                                 <p>Fazer Logout</p>
                             </div>
                         )
                     }
 
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
                         <FiHome size={18} className="mr-3" />
                         <p>Início</p>
                     </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
                         <AiOutlinePercentage size={18} className="mr-3" />
                         <p>Ofertas</p>
                     </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
                         <GrCatalog size={18} className="mr-3" />
                         <p>Catálogo</p>
                     </div>
@@ -84,9 +84,9 @@ export default function Header() {
 
             {/*HEADER START*/}
             <div className="container mx-auto text-white flex justify-between p-6 items-center">
-                <AiOutlineMenu size={20} onClick={() => handleMenu()} />
-                <h1 className="font-bold text-lg"><span className="text-purple-600">Gamer</span> Store</h1>
-                <AiOutlineShoppingCart size={25} />
+                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded"/>
+                <h1 className="font-bold text-lg cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
+                <AiOutlineShoppingCart size={31} className="cursor-pointer border p-1 rounded"/>
             </div>
             {/*HEADER END*/}
         </>
