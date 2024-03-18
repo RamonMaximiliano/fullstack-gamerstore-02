@@ -83,10 +83,10 @@ export default function Header() {
             {/*SIDE MENU END*/}
 
             {/*HEADER START*/}
-            <div className="container mx-auto text-white flex justify-between p-6 items-center">
-                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded"/>
+            <div className="container mx-auto text-white flex justify-between p-6 items-center border-b border-gray-500">
+                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded border-gray-500"/>
                 <h1 className="font-bold text-lg cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
-                <AiOutlineShoppingCart size={31} className="cursor-pointer border p-1 rounded"/>
+                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500"/>
             </div>
             {/*HEADER END*/}
         </>
