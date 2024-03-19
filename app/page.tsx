@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import fiftyoff from "../public/images/banner-55off.png";
 import fiftyoff1 from "../public/images/banner-55off1.png";
@@ -14,9 +15,20 @@ import { MdMonitor } from "react-icons/md";
 import { FaMouse } from "react-icons/fa";
 import { FaRegSquare } from "react-icons/fa";
 import { RiSurroundSoundLine } from "react-icons/ri";
-
+import { Product } from "@prisma/client";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [productsList, setProductsList] = useState<Product[]>([]);
+
+  useEffect(()=>{
+      const fetchData = async () => {
+          const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
+          setProductsList(prods);
+      };
+      fetchData();
+  }, []);
+
   return (
     <>
       {/*     FIRST BANNER
@@ -64,13 +76,7 @@ export default function Home() {
           <RiSurroundSoundLine className="mr-4" />
           <p>Speakers</p>
         </div>
-
-
-
       </div>
-
-
-
 
       {/*  SECOND BANNER
  */}      <div className="container mx-auto hidden lg:flex">
@@ -87,7 +93,6 @@ export default function Home() {
       </div>
       {/*  SECOND BANNER
  */}
-
 
       {/* THIRD BANNER */}
 
