@@ -9,6 +9,8 @@ import fones2 from "../public/images/banner-fones2.png";
 import mouses from "../public/images/banner-mouses.png";
 import mouses1 from "../public/images/banner-mouses1.png";
 import mouses2 from "../public/images/banner-mouses2.png";
+import banner1 from "../public/images/banner1.png";
+import banner2 from "../public/images/banner2.png";
 import { FaRegKeyboard } from "react-icons/fa6";
 import { FaHeadset } from "react-icons/fa6";
 import { MdMonitor } from "react-icons/md";
@@ -33,13 +35,9 @@ export default function Home() {
   return (
     <>
       {/*     FIRST BANNER
- */}      <div className="container mx-auto hidden lg:flex">
-        <div className="mx-auto w-11/12 h-[150px] my-6 bg-purple-900 flex items-center text-center rounded-lg">
-          <div className="flex mx-auto justify-between w-2/5 items-center">
-            <Image src={fiftyoff1} alt="Fifty Off Banner" className="w-[135px] h-[90px]" />
-            <Image src={fiftyoff2} alt="Fifty Off Banner" className="w-[120px] h-[130px]" />
-          </div>
-        </div>
+ */}
+      <div className="container mx-auto hidden lg:flex items-center text-center">
+        <Image src={banner1} alt="Fifty Off Banner" className="rounded-xl w-10/12 mx-auto my-6"  />
       </div>
       <div className="container mx-auto lg:hidden">
         <Image src={fiftyoff} alt="Fifty Off Banner" className="mx-auto w-[340px] h-[150px] my-6" />
@@ -92,13 +90,13 @@ export default function Home() {
       </div>
 
       {/*  SECOND BANNER
- */}      <div className="container mx-auto hidden lg:flex">
-        <div className="mx-auto w-11/12 h-[150px] my-6 bg-purple-900 flex items-center text-center rounded-lg">
-          <div className="flex mx-auto justify-between w-2/5 items-center">
-            <Image src={fones2} alt="Fifty Off Banner" className="w-[130px] h-[130px]" />
-            <Image src={fones1} alt="Fifty Off Banner" className="w-[145px] h-[120px]" />
-          </div>
+ */}
+      <div className="container mx-auto hidden lg:flex">
+        <div className="flex mx-auto justify-around w-10/12 items-center text-center">
+          <Image src={fones} alt="Fifty Off Banner" className="w-[480px] h-[200px] m-1" />
+          <Image src={mouses} alt="Fifty Off Banner" className="w-[480px] h-[200px] m-1" />
         </div>
+
       </div>
 
       <div className="container mx-auto lg:hidden">
@@ -108,15 +106,10 @@ export default function Home() {
  */}
 
       {/* THIRD BANNER */}
-
-      <div className="container mx-auto hidden lg:flex">
-        <div className="mx-auto w-11/12 h-[150px] my-6 bg-purple-900 flex items-center text-center rounded-lg">
-          <div className="flex mx-auto justify-between w-2/5 items-center">
-            <Image src={mouses1} alt="Fifty Off Banner" className="w-[140px] h-[120px]" />
-            <Image src={mouses2} alt="Fifty Off Banner" className="w-[120px] h-[120px]" />
-          </div>
-        </div>
+      <div className="container mx-auto hidden lg:flex items-center text-center">
+        <Image src={banner2} alt="Fifty Off Banner" className="rounded-xl w-10/12 mx-auto my-6" />
       </div>
+
       <div className="container mx-auto lg:hidden">
         <Image src={mouses} alt="Mouses Banner" className="mx-auto w-[340px] h-[150px] my-6" />
       </div>
