@@ -10,8 +10,10 @@ import { GrCatalog } from "react-icons/gr";
 import { RxCross2 } from "react-icons/rx";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
+    const router = useRouter()
     const { status, data } = useSession();
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
@@ -28,6 +30,11 @@ export default function Header() {
     const handleLogOut = () => {
         signOut();
         setMenu(false)
+    }
+
+    function handleCatalog(){
+    router.push('/catalogo')
+    setMenu(false)
     }
 
     return (
@@ -75,7 +82,7 @@ export default function Header() {
                         <AiOutlinePercentage size={18} className="mr-3" />
                         <p>Ofertas</p>
                     </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={()=>handleCatalog()}>
                         <GrCatalog size={18} className="mr-3" />
                         <p>Catálogo</p>
                     </div>

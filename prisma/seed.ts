@@ -8,7 +8,7 @@ async function main() {
       data: {
         name: "Mouses",
         slug: "mouses",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/mouses.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F03_hyperx-dart.png&w=2048&q=75",
       },
     });
 
@@ -98,7 +98,7 @@ async function main() {
       data: {
         name: "Teclados",
         slug: "keyboards",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/keyboards.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F04_redragon-gamer-ashe.png&w=2048&q=75",
       },
     });
 
@@ -203,7 +203,7 @@ async function main() {
       data: {
         name: "Fones",
         slug: "headphones",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/headphones.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F01_razer-kraken.png&w=2048&q=75",
       },
     });
 
@@ -308,7 +308,7 @@ async function main() {
       data: {
         name: "Mousepads",
         slug: "mousepads",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/mousepads.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F03_force-dark.png&w=2048&q=75",
       },
     });
 
@@ -413,7 +413,7 @@ async function main() {
       data: {
         name: "Monitores",
         slug: "monitors",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/monitors.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F01_dell-S3422DWG.png&w=2048&q=75",
       },
     });
 
@@ -518,7 +518,7 @@ async function main() {
       data: {
         name: "Speakers",
         slug: "speakers",
-        imageUrl: "https://fsw-store.s3.sa-east-1.amazonaws.com/speakers.png",
+        imageUrl: "https://fsw-store-ashy.vercel.app/_next/image?url=https%3A%2F%2Ffsw-store-rafa.s3.sa-east-1.amazonaws.com%2F01_logi-surround-z607.png&w=2048&q=75",
       },
     });
 
