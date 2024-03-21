@@ -91,10 +91,10 @@ export default function Home() {
 
       {/*  SECOND BANNER
  */}
-      <div className="container mx-auto hidden lg:flex">
-        <div className="flex mx-auto justify-around w-10/12 items-center text-center">
-          <Image src={fones} alt="Fifty Off Banner" className="w-[480px] h-[200px] m-1" />
-          <Image src={mouses} alt="Fifty Off Banner" className="w-[480px] h-[200px] m-1" />
+      <div className="container mx-auto hidden lg:flex justify-between">
+        <div className="flex mx-auto justify-between w-10/12 items-center text-center">
+          <Image src={fones} alt="Fifty Off Banner" className="w-[49%]" />
+          <Image src={mouses} alt="Fifty Off Banner" className="w-[49%]" />
         </div>
 
       </div>

@@ -16,15 +16,15 @@ export default function ProdItem(props: prod) {
     return (
         <>
             <div className="w-[250px] m-6">
-                <div className="bg-slate-900 w-[250px] h-[250px] items-center rounded-2xl">
-                    <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center absolute mt-3 ml-3 rounded-2xl">
+                <div className="bg-slate-900 w-[250px] h-[250px] items-center rounded-2xl flex">
+                    <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center absolute mb-48 ml-3 rounded-2xl">
                         <div className="flex items-center justify-around w-9/12">
                             <FaArrowDownLong />
                             <p>{props.discount}</p>
                             <FaPercentage />
                         </div>
                     </div>
-                    <div className="w-9/12 mx-auto pt-[10%]">
+                    <div className="w-[190px] mx-auto">
                         <img src={props.image[0]} alt="test" className="m-auto my-auto max-w-full"></img>
                     </div>
                 </div>
@@ -39,3 +39,11 @@ export default function ProdItem(props: prod) {
         </>
     );
 }
+
+
+/* 
+<div class="flex justify-center items-center h-screen">
+  <div class="bg-gray-200 p-6 rounded-lg">
+    <!-- Your content here -->
+  </div>
+</div> */
