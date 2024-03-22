@@ -17,13 +17,15 @@ export default function ProdItem(props: prod) {
         <>
             <div className="w-[250px] m-6">
                 <div className="bg-slate-900 w-[250px] h-[250px] items-center rounded-2xl flex">
-                    <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center absolute mb-48 ml-3 rounded-2xl">
-                        <div className="flex items-center justify-around w-9/12">
-                            <FaArrowDownLong />
-                            <p>{props.discount}</p>
-                            <FaPercentage />
+                    {props.discount > 0 &&
+                        <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center absolute mb-48 ml-3 rounded-2xl">
+                            <div className="flex items-center justify-around w-9/12">
+                                <FaArrowDownLong />
+                                <p>{props.discount}</p>
+                                <FaPercentage />
+                            </div>
                         </div>
-                    </div>
+                    }
                     <div className="w-[190px] mx-auto">
                         <img src={props.image[0]} alt="test" className="m-auto my-auto max-w-full"></img>
                     </div>

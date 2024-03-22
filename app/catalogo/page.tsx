@@ -16,7 +16,6 @@ export default function Footer() {
         getCategories();
     }, []);
 
-    console.log(categories)
     return (
         <>
             <div className="container mx-auto">

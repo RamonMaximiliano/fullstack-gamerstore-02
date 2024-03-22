@@ -20,9 +20,14 @@ import { RiSurroundSoundLine } from "react-icons/ri";
 import { Product } from "@prisma/client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ProductsCarrousel from "./components/ProductsCarrousel/ProductsCarrousel";
+import { MdOutlineDiscount } from "react-icons/md";
 
 export default function Home() {
   const [productsList, setProductsList] = useState<Product[]>([]);
+  const [keyboardsList, setKeyboardsList] = useState<Product[]>([]);
+  const [mouseList, setMouseList] = useState<Product[]>([]);
+  const [discountList, setDiscountList] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,18 +37,54 @@ export default function Home() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const mouses = productsList.filter((item) => {
+      return item.categoryId == "c6911b3d-988f-4fee-80d3-fda966c75c76"
+    })
+    const newmouses = mouses.slice(0, 4);
+    setMouseList(newmouses)
+  }, [productsList]);
+
+  useEffect(() => {
+    const keyboards = productsList.filter((item) => {
+      return item.categoryId == "d41ade5e-514d-4c10-b9c4-53edff445c93"
+    })
+    const newkeyboards = keyboards.slice(0, 4);
+    setKeyboardsList(newkeyboards)
+  }, [productsList]);
+
+  useEffect(() => {
+    const discount = productsList.filter((item) => {
+      return item.discountPercentage == 15
+    })
+    const newdiscount = discount.slice(0, 4);
+    setDiscountList(newdiscount)
+  }, [productsList]);
+
   return (
     <>
       {/*     FIRST BANNER
  */}
       <div className="container mx-auto hidden lg:flex items-center text-center">
-        <Image src={banner1} alt="Fifty Off Banner" className="rounded-xl w-10/12 mx-auto my-6"  />
+        <Image src={banner1} alt="Fifty Off Banner" className="rounded-xl w-10/12 mx-auto my-6" />
       </div>
       <div className="container mx-auto lg:hidden">
         <Image src={fiftyoff} alt="Fifty Off Banner" className="mx-auto w-[340px] h-[150px] my-6" />
       </div>
       {/*     FIRST BANNER
  */}
+
+      <div className="flex w-8/12 flex-wrap mx-auto">
+        <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
+          <div className="flex items-center w-8/12 justify-between">
+            <MdOutlineDiscount size={18} className="mr-3" />
+            <p>Descontos</p>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-11/12 mx-auto">
+        <ProductsCarrousel item={discountList} />
+      </div>
 
       <div className="grid grid-cols-2 container mx-auto items-center text-center">
         <Link href={"/Category/keyboards"}>
@@ -105,6 +146,20 @@ export default function Home() {
       {/*  SECOND BANNER
  */}
 
+      <Link href={"/Category/mouses"}>
+        <div className="flex w-8/12 flex-wrap mx-auto">
+          <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
+            <div className="flex items-center w-8/12 justify-between">
+              <FaMouse size={18} className="mr-3" />
+              <p>Mouses</p>
+            </div>
+          </div>
+        </div>
+      </Link>
+      <div className="flex w-11/12 mx-auto">
+        <ProductsCarrousel item={mouseList} />
+      </div>
+
       {/* THIRD BANNER */}
       <div className="container mx-auto hidden lg:flex items-center text-center">
         <Image src={banner2} alt="Fifty Off Banner" className="rounded-xl w-10/12 mx-auto my-6" />
@@ -114,6 +169,19 @@ export default function Home() {
         <Image src={mouses} alt="Mouses Banner" className="mx-auto w-[340px] h-[150px] my-6" />
       </div>
       {/* THIRD BANNER */}
+      <Link href={"/Category/keyboards"}>
+        <div className="flex w-8/12 flex-wrap mx-auto cursor-pointer">
+          <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
+            <div className="flex items-center w-8/12 justify-between">
+              <FaRegKeyboard size={18} className="mr-3" />
+              <p>Teclados</p>
+            </div>
+          </div>
+        </div>
+      </Link>
+      <div className="flex w-11/12 mx-auto">
+        <ProductsCarrousel item={keyboardsList} />
+      </div>
     </>
   );
 }
