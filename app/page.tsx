@@ -74,7 +74,7 @@ export default function Home() {
       {/*     FIRST BANNER
  */}
 
-      <div className="flex w-8/12 flex-wrap mx-auto">
+      <div className="flex w-8/12 flex-wrap mx-auto mt-8">
         <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
           <div className="flex items-center w-8/12 justify-between">
             <MdOutlineDiscount size={18} className="mr-3" />
@@ -86,7 +86,7 @@ export default function Home() {
         <ProductsCarrousel item={discountList} />
       </div>
 
-      <div className="grid grid-cols-2 container mx-auto items-center text-center">
+      <div className="grid grid-cols-2 container mx-auto items-center text-center my-10">
         <Link href={"/Category/keyboards"}>
           <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer">
             <FaRegKeyboard className="mr-4" />
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/*  SECOND BANNER
  */}
-      <div className="container mx-auto hidden lg:flex justify-between">
+      <div className="container mx-auto hidden lg:flex justify-between my-10">
         <div className="flex mx-auto justify-between w-10/12 items-center text-center">
           <Image src={fones} alt="Fifty Off Banner" className="w-[49%]" />
           <Image src={mouses} alt="Fifty Off Banner" className="w-[49%]" />
@@ -147,7 +147,7 @@ export default function Home() {
  */}
 
       <Link href={"/Category/mouses"}>
-        <div className="flex w-8/12 flex-wrap mx-auto">
+        <div className="flex w-8/12 flex-wrap mx-auto mt-8">
           <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
             <div className="flex items-center w-8/12 justify-between">
               <FaMouse size={18} className="mr-3" />
@@ -166,11 +166,11 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto lg:hidden">
-        <Image src={mouses} alt="Mouses Banner" className="mx-auto w-[340px] h-[150px] my-6" />
+        <Image src={mouses} alt="Mouses Banner" className="mx-auto w-[340px] h-[150px]" />
       </div>
       {/* THIRD BANNER */}
       <Link href={"/Category/keyboards"}>
-        <div className="flex w-8/12 flex-wrap mx-auto cursor-pointer">
+        <div className="flex w-8/12 flex-wrap mx-auto cursor-pointer mt-8">
           <div className="border-2 w-[200px] h-[45px] flex rounded-3xl border-purple-600 my-4 justify-center">
             <div className="flex items-center w-8/12 justify-between">
               <FaRegKeyboard size={18} className="mr-3" />

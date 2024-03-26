@@ -3,6 +3,7 @@ import { Product } from "@prisma/client";
 import Image from "next/image";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { FaPercentage } from "react-icons/fa";
+import Link from "next/link";
 
 type prod = {
     id: string;
@@ -10,11 +11,13 @@ type prod = {
     name: string,
     image: string[];
     price: number;
+    slug: string;
 }
 
 export default function ProdItem(props: prod) {
     return (
         <>
+        <Link href={`/ProdDetail/${props.slug}`}>
             <div className="w-[250px] m-6">
                 <div className="bg-slate-900 w-[250px] h-[250px] items-center rounded-2xl flex">
                     {props.discount > 0 &&
@@ -27,7 +30,7 @@ export default function ProdItem(props: prod) {
                         </div>
                     }
                     <div className="w-[190px] mx-auto">
-                        <img src={props.image[0]} alt="test" className="m-auto my-auto max-w-full"></img>
+                        <img src={props.image[0]} alt="prod" className="m-auto my-auto max-w-full"></img>
                     </div>
                 </div>
                 <div className="mt-1">
@@ -38,6 +41,7 @@ export default function ProdItem(props: prod) {
                     </div>
                 </div>
             </div>
+            </Link>
         </>
     );
 }

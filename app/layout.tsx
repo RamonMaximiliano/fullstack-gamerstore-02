@@ -30,7 +30,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
-VIDEO 2:
 
 
 - Database 

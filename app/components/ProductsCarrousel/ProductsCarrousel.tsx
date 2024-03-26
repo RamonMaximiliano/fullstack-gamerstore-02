@@ -6,12 +6,11 @@ export default function ProductsCarrousel({item}:any) {
 
     return (
         <>
-        <div className="flex w-8/12	mx-auto ">
+        <div className="flex w-8/12	mx-auto">
                 {
                     item.map((item:any) => {
-                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} />
+                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
                     })
-
                 }
                 </div> 
         </>

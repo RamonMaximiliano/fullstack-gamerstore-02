@@ -9,6 +9,8 @@ import { FaMouse } from "react-icons/fa";
 import { FaRegSquare } from "react-icons/fa";
 import { RiSurroundSoundLine } from "react-icons/ri";
 
+
+//O nome do props sendo recebido neste component precisa ser o mesmo da pasta onde consta a page.tsx dele, se não vai aparecer como undefined
 export default function Category({ params }: { params: { category: string } }) {
     const [categoryList, setCategoryList] = useState<Product[]>([]);
     const [categoryListFiltered, setCategoryListFiltered] = useState<Product[]>([]);
@@ -66,7 +68,7 @@ export default function Category({ params }: { params: { category: string } }) {
                 <div className="flex w-10/12 flex-wrap mx-auto">
                 {
                     categoryListFiltered.map((item: Product) => {
-                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} />
+                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
                     })
 
                 }
