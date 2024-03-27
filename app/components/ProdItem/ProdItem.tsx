@@ -18,7 +18,7 @@ export default function ProdItem(props: prod) {
     return (
         <>
         <Link href={`/ProdDetail/${props.slug}`}>
-            <div className="w-[250px] m-6">
+            <div className="w-[240px] m-3">
                 <div className="bg-slate-900 w-[250px] h-[250px] items-center rounded-2xl flex">
                     {props.discount > 0 &&
                         <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center absolute mb-48 ml-3 rounded-2xl">

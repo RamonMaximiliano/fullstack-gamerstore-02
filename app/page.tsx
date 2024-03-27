@@ -82,8 +82,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex w-11/12 mx-auto">
-        <ProductsCarrousel item={discountList} />
+      <div className="container w-12/12 mx-auto">
+        <div className="w-10/12 mx-auto items-center">
+          <ProductsCarrousel item={discountList} />
+        </div>
       </div>
 
       <div className="grid grid-cols-2 container mx-auto items-center text-center my-10">
@@ -156,8 +158,11 @@ export default function Home() {
           </div>
         </div>
       </Link>
-      <div className="flex w-11/12 mx-auto">
-        <ProductsCarrousel item={mouseList} />
+
+      <div className="container w-12/12 mx-auto">
+        <div className="w-10/12 mx-auto items-center">
+          <ProductsCarrousel item={mouseList} />
+        </div>
       </div>
 
       {/* THIRD BANNER */}
@@ -179,8 +184,10 @@ export default function Home() {
           </div>
         </div>
       </Link>
-      <div className="flex w-11/12 mx-auto">
+      <div className="container w-12/12 mx-auto">
+        <div className="w-10/12 mx-auto items-center">
         <ProductsCarrousel item={keyboardsList} />
+        </div>
       </div>
     </>
   );

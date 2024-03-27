@@ -7,12 +7,13 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductsCarrousel from "../../components/ProductsCarrousel/ProductsCarrousel";
 import ProdItem from "../../components/ProdItem/ProdItem";
-
+import { ImTruck } from "react-icons/im";
 
 //O nome do props sendo recebido neste component precisa ser o mesmo da pasta onde consta a page.tsx dele, se não vai aparecer como undefined
 export default function ProdDetail({ params }: { params: { slug: string } }) {
     const [prodDetail, setProdDetail] = useState<Product>();
     const [prodList, setProdList] = useState<Product[]>([]);
+    const [quant, setQuant] = useState(1);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,6 +38,17 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
         fetchData();
     }, [prodDetail])
 
+    function quantPlus() {
+        setQuant(quant + 1)
+    }
+
+    function quantMinus() {
+        if (quant > 1) {
+            setQuant(quant - 1)
+        } else {
+            setQuant(1)
+        }
+    }
 
     return (
         <>
@@ -85,24 +97,44 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                     </div>
 
                     <div className="w-10/12 mx-auto my-4 flex items-center">
-                        <MdKeyboardArrowLeft size={30} className="border border-gray-500 rounded-sm cursor-pointer" />
-                        <p className="mx-4">1</p>
-                        <MdKeyboardArrowRight size={30} className="border border-gray-500 rounded-sm cursor-pointer" />
+                        <MdKeyboardArrowLeft size={30} className="border border-gray-500 rounded-sm cursor-pointer" onClick={() => quantMinus()} />
+                        <p className="mx-4">{quant}</p>
+                        <MdKeyboardArrowRight size={30} className="border border-gray-500 rounded-sm cursor-pointer" onClick={() => quantPlus()} />
                     </div>
 
                     <div className="w-10/12 mx-auto my-4">
                         <h1 className="mb-2">Descrição</h1>
                         <p className="text-sm text-gray-400">{prodDetail?.description}</p><br />
                     </div>
-
                     <div className="w-10/12 mx-auto my-4">
                         <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2">ADICIONAR AO CARRINHO</button>
-                        <p className="p-4 bg-gray-800 w-[100%] rounded-lg my-2">Banner</p>
+                        <div className="p-4 bg-gray-800 w-[100%] rounded-lg my-2 flex">
+                            <div className="w-10/12 flex justify-between items-center mx-auto flex-wrap">
+                                <div className="flex items-center w-[300px] justify-between flex-wrap">
+                                    <ImTruck size={30} />
+                                    <div className="text-sm">
+                                        <p>Entrega via <span className="font-bold italic">GamerStorePacket &copy;</span></p>
+                                        <p className="text-purple-500">Envio para<span className="font-bold">todo Brasil</span></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="font-bold">Frete Grátis</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="flex w-10/12 mx-auto">
-                        <p>Carrosel</p>
-                        <ProductsCarrousel item={prodList} />
+                    <div className="flex w-10/12 mx-auto flex-col">
+                        <div className="border-2 w-[300px] h-[45px] flex rounded-3xl border-purple-600 my-4">
+                            <div className="flex items-center w-12/12 text-center mx-auto">
+                                <p>Produtos recomendados</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="container w-12/12 mx-auto">
+                        <div className="w-10/12 mx-auto items-center">
+                            <ProductsCarrousel item={prodList} />
+                        </div>
                     </div>
                 </p>
             </div>
