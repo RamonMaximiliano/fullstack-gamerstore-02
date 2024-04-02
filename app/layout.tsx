@@ -34,6 +34,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 - Loading pages 
 - Shopping cart
 - DB table purchases
+- Meus pedidos pagina
 
 
 
