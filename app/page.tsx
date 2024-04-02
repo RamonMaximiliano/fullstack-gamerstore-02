@@ -1,14 +1,8 @@
 "use client"
 import Image from "next/image";
 import fiftyoff from "../public/images/banner-55off.png";
-import fiftyoff1 from "../public/images/banner-55off1.png";
-import fiftyoff2 from "../public/images/banner-55off2.png";
 import fones from "../public/images/banner-fones.png";
-import fones1 from "../public/images/banner-fones1.png";
-import fones2 from "../public/images/banner-fones2.png";
 import mouses from "../public/images/banner-mouses.png";
-import mouses1 from "../public/images/banner-mouses1.png";
-import mouses2 from "../public/images/banner-mouses2.png";
 import banner1 from "../public/images/banner1.png";
 import banner2 from "../public/images/banner2.png";
 import { FaRegKeyboard } from "react-icons/fa6";
@@ -184,7 +178,7 @@ export default function Home() {
           </div>
         </div>
       </Link>
-      <div className="container w-12/12 mx-auto">
+      <div className="container w-12/12 mx-auto mb-14">
         <div className="w-10/12 mx-auto items-center">
         <ProductsCarrousel item={keyboardsList} />
         </div>

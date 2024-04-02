@@ -30,9 +30,13 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
+- responsivenes
+- Loading pages 
+- Shopping cart
+- DB table purchases
 
 
-- Database 
+
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main

@@ -14,6 +14,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
     const [prodDetail, setProdDetail] = useState<Product>();
     const [prodList, setProdList] = useState<Product[]>([]);
     const [quant, setQuant] = useState(1);
+    const [mainPic, setMainPic] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -52,28 +53,28 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
 
     return (
         <>
-            <div className="w-8/12 mx-auto">
+            <div className="w-8/12 mx-auto mb-20">
                 <p>
                     <div className="items-center bg-slate-900  w-10/12 mx-auto mt-8 rounded-xl">
-                        <img src={prodDetail?.imageUrls[0]} className="w-[50%] mx-auto p-3"></img>
+                        <img src={prodDetail?.imageUrls[mainPic]} className="w-[50%] mx-auto p-3"></img>
                     </div>
                     <div className="flex mx-auto justify-between w-10/12 mt-8 flex-wrap">
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1">
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(1)}>
                             <div className="w-[190px] mx-auto">
-                                <img src={prodDetail?.imageUrls[1]} className="m-auto my-auto max-w-full p-3"></img>
+                                <img src={prodDetail?.imageUrls[1]} className="m-auto my-auto max-w-full p-3" ></img>
                             </div>
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1">
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(2)}>
                             <div className="w-[190px] mx-auto">
                                 <img src={prodDetail?.imageUrls[2]} className="m-auto my-auto max-w-full p-3"></img>
                             </div>
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1">
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(3)}>
                             <div className="w-[190px] mx-auto">
                                 <img src={prodDetail?.imageUrls[3]} className="m-auto my-auto max-w-full p-3"></img>
                             </div>
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1">
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(0)}>
                             <div className="w-[190px] mx-auto">
                                 <img src={prodDetail?.imageUrls[0]} className="m-auto my-auto max-w-full p-3"></img>
                             </div>
@@ -106,7 +107,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                         <h1 className="mb-2">Descrição</h1>
                         <p className="text-sm text-gray-400">{prodDetail?.description}</p><br />
                     </div>
-                    <div className="w-10/12 mx-auto my-4">
+                    <div className="w-10/12 mx-auto mb-14">
                         <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2">ADICIONAR AO CARRINHO</button>
                         <div className="p-4 bg-gray-800 w-[100%] rounded-lg my-2 flex">
                             <div className="w-10/12 flex justify-between items-center mx-auto flex-wrap">
@@ -114,7 +115,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                                     <ImTruck size={30} />
                                     <div className="text-sm">
                                         <p>Entrega via <span className="font-bold italic">GamerStorePacket &copy;</span></p>
-                                        <p className="text-purple-500">Envio para<span className="font-bold">todo Brasil</span></p>
+                                        <p className="text-purple-500">Envio para <span className="font-bold">todo Brasil</span></p>
                                     </div>
                                 </div>
                                 <div>
@@ -131,7 +132,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                             </div>
                         </div>
                     </div>
-                    <div className="container w-12/12 mx-auto">
+                    <div className="container w-12/12 mx-auto my-2">
                         <div className="w-10/12 mx-auto items-center">
                             <ProductsCarrousel item={prodList} />
                         </div>

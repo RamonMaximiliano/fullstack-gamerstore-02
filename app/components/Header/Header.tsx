@@ -32,25 +32,29 @@ export default function Header() {
         setMenu(false)
     }
 
-    function handleCatalog(){
-    router.push('/catalogo')
-    setMenu(false)
+    function handleCatalog() {
+        router.push('/catalogo')
+        setMenu(false)
+    }
+    function handleInicio() {
+        router.push('/')
+        setMenu(false)
     }
 
     return (
         <>
             {/*SIDE MENU START*/}
             {menu &&
-                <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10">
+                <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10 rounded-br-lg">
                     <div className="flex justify-end p-2 duration-200">
-                        <RxCross2 size={20} onClick={() => handleMenu()} className="cursor-pointer"/>
+                        <RxCross2 size={20} onClick={() => handleMenu()} className="cursor-pointer" />
                     </div>
                     <div className="flex w-11/12 p-1 mx-auto items-center mb-1 rounded-sm text-xl">
                         <h1>Menu</h1>
                     </div>
                     {status === "authenticated" && data.user && (
-                        <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm">
-                            <img src={String(data.user.image)} className="rounded-full w-1/5 mr-4"></img>
+                        <div className="flex w-11/12 border-2 p-2 mx-auto items-center my-1 rounded-sm text-sm">
+                            <img src={String(data.user.image)} className="rounded-full w-[35px] mx-2"></img>
                             <p className="text-wrap">{data.user.name!}</p>
                         </div>
                     )
@@ -73,16 +77,11 @@ export default function Header() {
                             </div>
                         )
                     }
-
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handleInicio()}>
                         <FiHome size={18} className="mr-3" />
                         <p>Início</p>
                     </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer">
-                        <AiOutlinePercentage size={18} className="mr-3" />
-                        <p>Ofertas</p>
-                    </div>
-                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={()=>handleCatalog()}>
+                    <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer mb-6" onClick={() => handleCatalog()}>
                         <GrCatalog size={18} className="mr-3" />
                         <p>Catálogo</p>
                     </div>
@@ -92,11 +91,11 @@ export default function Header() {
 
             {/*HEADER START*/}
             <div className="container mx-auto text-white flex justify-between p-6 items-center border-b border-gray-500">
-                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded border-gray-500"/>
+                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded border-gray-500" />
                 <Link href={"/"}>
-                <h1 className="font-bold text-2xl cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
+                    <h1 className="font-bold text-2xl cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
                 </Link>
-                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500"/>
+                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500" />
             </div>
             {/*HEADER END*/}
         </>
