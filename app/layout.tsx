@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header/Header";
 import { NextAuthProvider } from "./providers/auth";
 import Footer from "./components/Footer/Footer";
+import { CartProvider } from "./providers/cartcontext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,13 +14,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+  const test = "Hello there"
+
   return (
     <html lang="en">
       <body className={inter.className}>
       <NextAuthProvider>
+        <CartProvider>
         <Header/>
         {children}   
-        <Footer/>   
+        <Footer/>  
+        </CartProvider> 
         </NextAuthProvider>
         </body>
     </html>
@@ -30,7 +35,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
-- responsivenes
+- Responsivenes
 - Loading pages 
 - Shopping cart
 - DB table purchases
@@ -38,10 +43,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 
 
-
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main
-
 
 
 */

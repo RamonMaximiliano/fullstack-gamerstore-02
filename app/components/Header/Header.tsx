@@ -13,7 +13,8 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation'
 
 export default function Header() {
-    const router = useRouter()
+
+       const router = useRouter()
     const { status, data } = useSession();
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
