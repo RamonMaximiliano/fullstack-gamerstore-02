@@ -11,10 +11,14 @@ import { RxCross2 } from "react-icons/rx";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
+import { useContext } from "react";
+import { CartContext } from "@/app/providers/cartcontext";
+import Cart from "../Cart/Cart";
 
 export default function Header() {
+    const {open,setOpen} = useContext(CartContext)
 
-       const router = useRouter()
+    const router = useRouter()
     const { status, data } = useSession();
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
@@ -40,6 +44,15 @@ export default function Header() {
     function handleInicio() {
         router.push('/')
         setMenu(false)
+    }
+
+
+    function handleCart(){
+        if (open == true){
+            setOpen(false)
+        } else {
+            setOpen(true)
+        }
     }
 
     return (
@@ -96,9 +109,11 @@ export default function Header() {
                 <Link href={"/"}>
                     <h1 className="font-bold text-2xl cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
                 </Link>
-                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500" />
+                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500" onClick={() => handleCart()} />
             </div>
             {/*HEADER END*/}
+
+            {open && <Cart/>}
         </>
     );
 }

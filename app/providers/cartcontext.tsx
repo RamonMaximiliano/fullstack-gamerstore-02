@@ -1,16 +1,17 @@
 "use client"
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 export const CartContext = createContext({} as any);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const test = "Hello there"
+    const [open, setOpen] = useState(false);
 
     // Provider implementation
     return (
         <CartContext.Provider
           value={{
-            test
+            setOpen,
+            open
           }}
         >
           {children}
