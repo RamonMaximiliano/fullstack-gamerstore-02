@@ -16,7 +16,7 @@ import { CartContext } from "@/app/providers/cartcontext";
 import Cart from "../Cart/Cart";
 
 export default function Header() {
-    const {open,setOpen} = useContext(CartContext)
+    const { open, setOpen } = useContext(CartContext)
 
     const router = useRouter()
     const { status, data } = useSession();
@@ -47,8 +47,8 @@ export default function Header() {
     }
 
 
-    function handleCart(){
-        if (open == true){
+    function handleCart() {
+        if (open == true) {
             setOpen(false)
         } else {
             setOpen(true)
@@ -101,6 +101,8 @@ export default function Header() {
                     </div>
                 </div>
             }
+            {open && <Cart />}
+
             {/*SIDE MENU END*/}
 
             {/*HEADER START*/}
@@ -112,8 +114,6 @@ export default function Header() {
                 <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500" onClick={() => handleCart()} />
             </div>
             {/*HEADER END*/}
-
-            {open && <Cart/>}
         </>
     );
 }
