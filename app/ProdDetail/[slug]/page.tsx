@@ -8,6 +8,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductsCarrousel from "../../components/ProductsCarrousel/ProductsCarrousel";
 import ProdItem from "../../components/ProdItem/ProdItem";
 import { ImTruck } from "react-icons/im";
+import { useContext } from "react";
+import { CartContext } from "@/app/providers/cartcontext";
 
 //O nome do props sendo recebido neste component precisa ser o mesmo da pasta onde consta a page.tsx dele, se não vai aparecer como undefined
 export default function ProdDetail({ params }: { params: { slug: string } }) {
@@ -15,6 +17,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
     const [prodList, setProdList] = useState<Product[]>([]);
     const [quant, setQuant] = useState(1);
     const [mainPic, setMainPic] = useState(0);
+    const { open, setOpen, products, cartProducts, setCartProducts} = useContext(CartContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,6 +53,22 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
             setQuant(1)
         }
     }
+
+    function purchased(){
+        const itemPurchased = {
+            id: prodDetail?.id,
+            name: prodDetail?.name,
+            quantity: quant,
+            price: prodDetail?.basePrice,
+            imageUrls: prodDetail?.imageUrls[0],
+            discountPercentage: prodDetail?.discountPercentage
+        }
+
+
+setCartProducts([...cartProducts,itemPurchased])
+
+
+}
 
     return (
         <>
@@ -108,7 +127,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                         <p className="text-sm text-gray-400">{prodDetail?.description}</p><br />
                     </div>
                     <div className="w-10/12 mx-auto mb-14">
-                        <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2">ADICIONAR AO CARRINHO</button>
+                        <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2" onClick={()=>purchased()}>ADICIONAR AO CARRINHO</button>
                         <div className="p-4 bg-gray-800 w-[100%] rounded-lg my-2 flex">
                             <div className="w-10/12 flex justify-between items-center mx-auto flex-wrap">
                                 <div className="flex items-center w-[300px] justify-between flex-wrap">

@@ -9,7 +9,7 @@ type cartItem = {
   name: string;
   quantity: number,
   price: number,
-  imageUrls: string[];
+  imageUrls: string;
   discountPercentage: number;
 }
 

@@ -6,9 +6,17 @@ import { useContext } from "react";
 import { CartContext } from "@/app/providers/cartcontext";
 import CartItem from "../CartItem/CartItem";
 
+type cartItem = {
+    id: string,
+    name: string;
+    quantity: number,
+    price: number,
+    imageUrls: string;
+    discountPercentage: number;
+}
+
 export default function Cart() {
-    const { open, setOpen, products } = useContext(CartContext)
-    console.log(products)
+    const { open, setOpen, products, cartProducts, setCartProducts } = useContext(CartContext)
 
     return (
         <>
@@ -32,15 +40,18 @@ export default function Cart() {
                         </div>
                     </div>
                     {/*HEADER END*/}
-
-                    <CartItem/>
+                    {
+                        cartProducts.map((item: cartItem) =>
+                            <CartItem key={item.id} id={item.id} name={item.name} quantity={item.quantity} price={item.price} imageUrls={item.imageUrls} discountPercentage={item.discountPercentage} />
+                        )
+                    }
 
                     {/*VALUES START*/}
                     <div className="flex flex-col justify-between w-11/12 mx-auto my-4">
                         <div className="flex justify-between border-t-2 text-sm border-gray-500 pt-2 pb-2">
                             <p>Subtotal</p>
                             <p>Number</p>
-                        </div>  
+                        </div>
                         <div className="flex justify-between border-t-2 text-sm border-gray-500 pt-2 pb-2">
                             <p>Entrega</p>
                             <p>GRÁTIS</p>
@@ -58,7 +69,7 @@ export default function Cart() {
                     </div>
                     {/*VALUES END*/}
 
-                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto">FINALIZAR COMPRA</button>     
+                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto">FINALIZAR COMPRA</button>
                 </div>
             </div>
         </>
