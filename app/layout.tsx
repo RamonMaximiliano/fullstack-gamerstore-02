@@ -42,6 +42,16 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 - Meus pedidos pagina
 
 
+CART:
+
+On the detail page, add the item to the cart:
+- Name (ID)
+- Price
+- Quantity
+
+
+
+
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main
