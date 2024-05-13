@@ -44,13 +44,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 CART:
 
-On the detail page, add the item to the cart:
-- Name (ID)
-- Price
-- Quantity
-
-
-
+- Calculare single price as per quantity
+- Calculate totals
+- Push Cartprods to DB
 
 
 https://fsw-store-ashy.vercel.app/

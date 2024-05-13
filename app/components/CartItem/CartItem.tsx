@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LuTrash } from "react-icons/lu";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
+import { useContext } from "react";
+import { CartContext } from "@/app/providers/cartcontext";
 
 type cartItem = {
     id: string,
@@ -12,7 +14,38 @@ type cartItem = {
     discountPercentage: number;
 }
 
-export default function CartItem(props:cartItem) {
+export default function CartItem(props: cartItem) {
+    const [quant, setQuant] = useState(props.quantity);
+    const { cartProducts, setCartProducts } = useContext(CartContext)
+
+    function plus() {
+        if (quant >= 1) {
+            const updatedQuant = quant + 1;
+            setQuant(updatedQuant)
+            const quantCartProducts = cartProducts.map((prod: cartItem) => {
+                if (prod.id === props.id) {
+                    prod.quantity = updatedQuant
+                }
+                return prod
+            })
+            setCartProducts(quantCartProducts)
+        }
+    }
+
+    function minus() {
+        if (quant > 1) {
+            const updatedQuant = quant - 1;
+            setQuant(updatedQuant)
+            const quantCartProducts = cartProducts.map((prod: cartItem) => {
+                if (prod.id === props.id) {
+                    prod.quantity = updatedQuant
+                }
+                return prod
+            })
+            setCartProducts(quantCartProducts)
+        }
+    }
+
     return (
         <>
             <div className="flex items-center w-11/12 justify-between mx-auto">
@@ -28,11 +61,11 @@ export default function CartItem(props:cartItem) {
                         <p>{props.price}</p>
                     </div>
                     <div className="flex items-center w-[130px] justify-between">
-                        <div className="border-gray-400 border p-2 rounded-md">
+                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => minus()}>
                             <FaAngleLeft size={20} />
                         </div>
-                        <p>{props.quantity}</p>
-                        <div className="border-gray-400 border p-2 rounded-md">
+                        <p>{quant}</p>
+                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => plus()}>
                             <FaAngleRight size={20} />
                         </div>
                     </div>

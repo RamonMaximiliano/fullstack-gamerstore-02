@@ -18,6 +18,7 @@ type cartItem = {
 export default function Cart() {
     const { open, setOpen, products, cartProducts, setCartProducts } = useContext(CartContext)
 
+    console.log(cartProducts)
     return (
         <>
             <div className="w-full flex justify-end">
