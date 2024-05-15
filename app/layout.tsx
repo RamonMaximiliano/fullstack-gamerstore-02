@@ -40,12 +40,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 - Shopping cart
 - DB table purchases
 - Meus pedidos pagina
+- Apply discount to base price
 
 
 CART:
 
-- Calculare single price as per quantity
-- Calculate totals
+- Delete item from Cart Array
 - Push Cartprods to DB
 
 

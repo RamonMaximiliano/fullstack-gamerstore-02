@@ -58,7 +58,7 @@ export default function CartItem(props: cartItem) {
                 <div className="w-10/12 mx-8 flex flex-col justify-between h-[120px]">
                     <div>
                         <p>{props.name}</p>
-                        <p>{props.price}</p>
+                        <p>R$ {(props.price - props.discountPercentage) * quant} <span className="text-gray-500 text-sm line-through">R$ {props.price * quant}</span></p>
                     </div>
                     <div className="flex items-center w-[130px] justify-between">
                         <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => minus()}>

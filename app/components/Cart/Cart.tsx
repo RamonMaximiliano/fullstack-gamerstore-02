@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
@@ -17,6 +17,26 @@ type cartItem = {
 
 export default function Cart() {
     const { open, setOpen, products, cartProducts, setCartProducts } = useContext(CartContext)
+    const [subtotal, setSubTotal] = useState(0);
+    const [discount, setDiscount] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        const subTot = cartProducts.reduce(subReduce, 0)
+        function subReduce(subTot: number, item: cartItem) {
+            return subTot += item.price * item.quantity
+        }
+        setSubTotal(subTot)
+
+        const tot = cartProducts.reduce(totReduce, 0)
+        function totReduce(totVal: number, item: cartItem) {
+            return totVal += (item.price - item.discountPercentage) * item.quantity
+        }
+        setTotal(tot)
+
+        setDiscount(tot - subTot)
+
+    }, [cartProducts])
 
     console.log(cartProducts)
     return (
@@ -51,7 +71,7 @@ export default function Cart() {
                     <div className="flex flex-col justify-between w-11/12 mx-auto my-4">
                         <div className="flex justify-between border-t-2 text-sm border-gray-500 pt-2 pb-2">
                             <p>Subtotal</p>
-                            <p>Number</p>
+                            <p>{subtotal}</p>
                         </div>
                         <div className="flex justify-between border-t-2 text-sm border-gray-500 pt-2 pb-2">
                             <p>Entrega</p>
@@ -60,12 +80,12 @@ export default function Cart() {
 
                         <div className="flex justify-between border-t-2 text-sm border-gray-500 pt-2 pb-2">
                             <p>Descontos</p>
-                            <p>Number</p>
+                            <p>{discount}</p>
                         </div>
 
                         <div className="flex justify-between font-bold text-lg border-t-2 border-gray-500 pt-2 pb-2">
                             <p >Total</p>
-                            <p>Number</p>
+                            <p>{total}</p>
                         </div>
                     </div>
                     {/*VALUES END*/}
