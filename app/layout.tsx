@@ -37,11 +37,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 - Responsivenes
 - Loading pages 
-- Shopping cart
 - DB table purchases
 - Meus pedidos pagina
 - Apply discount to base price
-
+- Button effects and hover (Add item to cart, plus and minus on cart, etc)
 
 CART:
 - Push Cartprods to DB

@@ -15,6 +15,8 @@ type cartItem = {
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [open, setOpen] = useState(false);
+    const [menu, setMenu] = useState(false);
+
     const [products, setProducts] = useState<Product[]>([]);
     const [cartProducts, setCartProducts] = useState<cartItem[]>([]);
 
@@ -35,7 +37,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             open,
             products,
             cartProducts, 
-            setCartProducts
+            setCartProducts,
+            menu,
+            setMenu
           }}
         >
           {children}
