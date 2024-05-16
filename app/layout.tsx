@@ -44,8 +44,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 
 CART:
-
-- Delete item from Cart Array
 - Push Cartprods to DB
 
 

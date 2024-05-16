@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
@@ -20,6 +20,7 @@ export default function Cart() {
     const [subtotal, setSubTotal] = useState(0);
     const [discount, setDiscount] = useState(0);
     const [total, setTotal] = useState(0);
+    const cartRef = useRef<HTMLElement | null>(null)
 
     useEffect(() => {
         const subTot = cartProducts.reduce(subReduce, 0)
@@ -39,11 +40,29 @@ export default function Cart() {
     }, [cartProducts])
 
     console.log(cartProducts)
+
+    useEffect(() => {
+        const clickOutsideCart = (event: any) => {
+            if (cartRef.current && !cartRef.current.contains(event.target)) {
+                // close cart
+                setOpen(false);
+            }
+        };
+
+        // event listener to listen for clicks outside the cart
+        document.addEventListener('click', clickOutsideCart);
+
+        // Removing the event listener when component unmounts
+        return () => {
+            document.removeEventListener('click', clickOutsideCart);
+        };
+    }, []);
+
     return (
         <>
             <div className="w-full flex justify-end">
 
-                <div className="w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10">
+                <div className="w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10" ref={cartRef as React.RefObject<HTMLDivElement>}>
 
                     {/*HEADER START*/}
                     <div className="flex items-center justify-between w-11/12 mx-auto my-4">
