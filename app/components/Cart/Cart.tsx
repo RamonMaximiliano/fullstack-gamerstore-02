@@ -5,6 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useContext } from "react";
 import { CartContext } from "@/app/providers/cartcontext";
 import CartItem from "../CartItem/CartItem";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 type cartItem = {
     id: string,
@@ -21,6 +22,10 @@ export default function Cart() {
     const [discount, setDiscount] = useState(0);
     const [total, setTotal] = useState(0);
     const cartRef = useRef<HTMLElement | null>(null)
+    const { status, data } = useSession();
+
+    console.log(status)
+    console.log(data)
 
     useEffect(() => {
         const subTot = cartProducts.reduce(subReduce, 0)
