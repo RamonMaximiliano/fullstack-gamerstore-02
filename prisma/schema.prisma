@@ -77,3 +77,9 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Purchase {
+  id       String  @id @default(uuid())
+  email    String
+  purchase Json
+}
