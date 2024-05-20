@@ -47,21 +47,21 @@ export default function Cart() {
     console.log(cartProducts)
 
     useEffect(() => {
-        const clickOutsideCart = (event: any) => {
-            if (cartRef.current && !cartRef.current.contains(event.target)) {
+        const clickOutsideCart = (event: MouseEvent) => {
+            if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
                 // close cart
                 setOpen(false);
             }
         };
 
         // event listener to listen for clicks outside the cart
-        document.addEventListener('click', clickOutsideCart);
+        document.addEventListener('mousedown', clickOutsideCart);
 
         // Removing the event listener when component unmounts
         return () => {
-            document.removeEventListener('click', clickOutsideCart);
+            document.removeEventListener('mousedown', clickOutsideCart);
         };
-    }, []);
+    }, [setOpen]);
 
     return (
         <>

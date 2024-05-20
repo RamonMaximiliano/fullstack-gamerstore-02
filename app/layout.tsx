@@ -44,10 +44,19 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 CART:
 - Push Cartprods to DB
+- Display purchase message successfull
+- When delete an item do not close cart
+
+
 
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main
 https://www.figma.com/file/Y8jmabSZXxAobeUJQdI4bm/FSW-Store-[Live]?type=design&node-id=89-379&mode=design
+
+
+
+
+
 
 */

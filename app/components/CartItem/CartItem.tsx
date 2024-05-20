@@ -46,7 +46,8 @@ export default function CartItem(props: cartItem) {
         }
     }
 
-    function deleteItem() {
+    function deleteItem(event: React.MouseEvent<HTMLDivElement>) {
+        event.stopPropagation(); 
         const deleteList = cartProducts.filter((item: cartItem) => {
             return item.id != props.id
         })
@@ -77,7 +78,7 @@ export default function CartItem(props: cartItem) {
                         </div>
                     </div>
                 </div>
-                <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => deleteItem()}>
+                <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={deleteItem}>
                     <LuTrash size={20} />
                 </div>
             </div>
