@@ -28,22 +28,22 @@ export default function Category({ params }: { params: { category: string } }) {
 
     if (params.category === 'mouses') {
         icon = <FaMouse/>;
-        categoryID = "c6911b3d-988f-4fee-80d3-fda966c75c76"
+        categoryID = "b085fc16-2c7f-4a4b-8e2e-b7e5a91453b8"
     } else if (params.category === 'keyboards') {
         icon = <FaRegKeyboard/>;
-        categoryID = "d41ade5e-514d-4c10-b9c4-53edff445c93"
+        categoryID = "593ee0da-c702-4583-85df-f5b2c3900c25"
     } else if (params.category === 'headphones') {
         icon = <FaHeadset/>;
-        categoryID = "a97f5749-839a-4e8a-adbe-4ecba77b79db"
+        categoryID = "593ee0da-c702-4583-85df-f5b2c3900c25"
     } else if (params.category === 'mousepads') {
         icon = <FaRegSquare/>;
-        categoryID = "9e7d953d-93c0-49dd-8095-bd2633623a1e"
+        categoryID = "628413bf-81ea-4c6b-8c3d-fc9a09b2b204"
     } else if (params.category === 'monitors') {
         icon = <MdMonitor/>;
-        categoryID = "c4f795e6-eb5d-47cc-9aa1-7ff6d3d28cd1"
+        categoryID = "64cd499d-69fa-40e9-a6c7-7bd9a93eb23a"
     } else if (params.category === 'speakers') {
         icon = <RiSurroundSoundLine/>;
-        categoryID = "212de033-516d-4f76-80a7-98cf4f19c91f"
+        categoryID = "aac7bfba-4ff6-43d5-ba37-143d4a6dbaed"
     } 
 
     useEffect(()=>{

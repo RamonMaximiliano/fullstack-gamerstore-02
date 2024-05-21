@@ -32,6 +32,10 @@ export default function HeaderMenu() {
         router.push('/')
         setMenu(false)
     }
+    function handlePedidos() {
+        router.push('/meuspedidos')
+        setMenu(false)
+    }
 
     useEffect(() => {
         const clickOutsideCart = (event: any) => {
@@ -85,6 +89,10 @@ export default function HeaderMenu() {
                 <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handleInicio()}>
                     <FiHome size={18} className="mr-3" />
                     <p>Início</p>
+                </div>
+                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handlePedidos()}>
+                    <FiHome size={18} className="mr-3" />
+                    <p>Meus Pedidos</p>
                 </div>
                 <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer mb-6" onClick={() => handleCatalog()}>
                     <GrCatalog size={18} className="mr-3" />

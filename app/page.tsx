@@ -33,7 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     const mouses = productsList.filter((item) => {
-      return item.categoryId == "c6911b3d-988f-4fee-80d3-fda966c75c76"
+      return item.categoryId == "b085fc16-2c7f-4a4b-8e2e-b7e5a91453b8"
     })
     const newmouses = mouses.slice(0, 4);
     setMouseList(newmouses)
@@ -41,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     const keyboards = productsList.filter((item) => {
-      return item.categoryId == "d41ade5e-514d-4c10-b9c4-53edff445c93"
+      return item.categoryId == "5fa84218-5b10-4929-a842-b78b88cf563f"
     })
     const newkeyboards = keyboards.slice(0, 4);
     setKeyboardsList(newkeyboards)
