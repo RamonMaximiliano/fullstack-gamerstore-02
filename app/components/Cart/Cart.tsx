@@ -24,7 +24,6 @@ export default function Cart() {
     const cartRef = useRef<HTMLElement | null>(null)
     const { status, data } = useSession();
 
-    console.log(status)
     console.log(data)
 
     useEffect(() => {
@@ -62,6 +61,20 @@ export default function Cart() {
             document.removeEventListener('mousedown', clickOutsideCart);
         };
     }, [setOpen]);
+
+
+
+    async function finish(){
+        const response = await fetch("http://localhost:3000/api/purchases",{
+            method: "POST",
+            body: Buffer.from(
+                JSON.stringify({
+                    email: data?.user?.email,
+                    purchase: cartProducts
+                })
+            ),
+        });
+    }
 
     return (
         <>
@@ -114,7 +127,7 @@ export default function Cart() {
                     </div>
                     {/*VALUES END*/}
 
-                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto">FINALIZAR COMPRA</button>
+                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto" onClick={()=>finish()}>FINALIZAR COMPRA</button>
                 </div>
             </div>
         </>
