@@ -35,33 +35,3 @@ Da para coletar dados com esta API
 
 */
 
-/*
-CHAT GPT SUGGESTION:
-===================================================================================
-
-Retrieving and Parsing JSON Data, When you retrieve the data, you may need to parse the JSON string back into a JavaScript object:
-----------------------------------------------------------------------------------
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-
-async function main() {
-  const purchases = await prisma.purchase.findMany();
-
-  purchases.forEach(purchase => {
-    purchase.purchase = JSON.parse(purchase.purchase);
-    console.log(purchase);
-  });
-}
-
-main()
-  .catch(e => {
-    throw e;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
-----------------------------------------------------------------------------------
-===================================================================================
-
-*/

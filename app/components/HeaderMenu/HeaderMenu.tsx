@@ -9,6 +9,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation'
 import { useContext } from "react";
 import { CartContext } from "@/app/providers/cartcontext";
+import { GoChecklist } from "react-icons/go";
 
 export default function HeaderMenu() {
     const { setMenu } = useContext(CartContext)
@@ -91,7 +92,7 @@ export default function HeaderMenu() {
                     <p>Início</p>
                 </div>
                 <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handlePedidos()}>
-                    <FiHome size={18} className="mr-3" />
+                    <GoChecklist size={18} className="mr-3" />
                     <p>Meus Pedidos</p>
                 </div>
                 <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer mb-6" onClick={() => handleCatalog()}>
