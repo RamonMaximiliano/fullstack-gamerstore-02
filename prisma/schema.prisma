@@ -79,7 +79,10 @@ model VerificationToken {
 }
 
 model Purchase {
-  id       String  @id @default(uuid())
+  id       String @id @default(uuid())
   email    String
   purchase Json
+  subtotal Decimal  @db.Decimal(8, 2)
+  discount Decimal  @db.Decimal(8, 2)
+  total    Decimal  @db.Decimal(8, 2)
 }

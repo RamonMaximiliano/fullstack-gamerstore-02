@@ -9,12 +9,15 @@ export async function GET(){
 
 export async function POST(request: Request){
   const req:any = await request.json();
-  const { email, purchase}= req;
+  const { email, purchase,subtotal,discount,total}= req;
 
   await prismaClient.purchase.create({
     data: {
       email,
-      purchase
+      purchase,
+      subtotal,
+      discount,
+      total
     }
   })
 

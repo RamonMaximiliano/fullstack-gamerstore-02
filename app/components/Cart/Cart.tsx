@@ -24,8 +24,6 @@ export default function Cart() {
     const cartRef = useRef<HTMLElement | null>(null)
     const { status, data } = useSession();
 
-    console.log(data)
-
     useEffect(() => {
         const subTot = cartProducts.reduce(subReduce, 0)
         function subReduce(subTot: number, item: cartItem) {
@@ -61,20 +59,25 @@ export default function Cart() {
             document.removeEventListener('mousedown', clickOutsideCart);
         };
     }, [setOpen]);
-
-
-
+ 
     async function finish(){
+        console.log(subtotal)
+        console.log(discount)
+        console.log(total)
+        
         const response = await fetch("http://localhost:3000/api/purchases",{
             method: "POST",
             body: Buffer.from(
                 JSON.stringify({
                     email: data?.user?.email,
-                    purchase: cartProducts
+                    purchase: cartProducts,
+                    subtotal: subtotal,
+                    discount: discount,
+                    total: total
                 })
             ),
         });
-    }
+    } 
 
     return (
         <>
