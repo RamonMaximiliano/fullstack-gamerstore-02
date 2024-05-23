@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import OrderItem from "../components/OrderItem/OrderItem";
 import { FaShoppingBasket } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 type order = {
     id: string,
@@ -25,6 +26,9 @@ type order = {
 export default function Meuspedidos() {
     const { status, data } = useSession();
     const [myOrders, setOrders] = useState([]);
+    const [update, setUpdate] = useState(false);
+
+    const router = useRouter();
     console.log(data)
     console.log(status)
 
@@ -37,7 +41,20 @@ export default function Meuspedidos() {
             setOrders(ordersByUser)
         }
         myOrders();
-    }, []);
+    }, [update]);
+
+    async function deletePurchase(id:string){
+        const response = await fetch("http://localhost:3000/api/purchases",{
+            method: "DELETE",
+            body: JSON.stringify({ id }),
+        })
+        setTimeout(() => {
+            router.refresh()
+            setUpdate(!update)
+        }, 5000);
+
+        return response.json();   
+    }
 
     return (
         <>
@@ -55,6 +72,7 @@ export default function Meuspedidos() {
                         <div className="flex flex-col w-11/12 justify-between mx-auto">
                             <h1>NÚMERO DO PEDIDO</h1>
                             <p className="text-sm text-gray-500">{item.id}</p>
+                            <p onClick={()=>deletePurchase(item.id)}>Test</p>
                         </div>
                         {
                             item.purchase.map((purchasedItem) => {

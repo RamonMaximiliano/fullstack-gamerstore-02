@@ -29,12 +29,21 @@ export async function POST(request: Request){
   );
 }
 
-/*
+export async function DELETE(request: Request){
+  const req: any = await request.json();
+    const { id } = req;
+    await prismaClient.purchase.delete({
+      where: {
+        id: id,
+      },
+    });
 
-Neste arquivo somente foi criada a URL da API para a table purchases somente
-http://localhost:3000/api/purchases
+  return new NextResponse(
+      JSON.stringify({
+        success: true,
+      }),
+      { status: 200 }
+    )
+}
 
-Da para coletar dados com esta API
-
-*/
 
