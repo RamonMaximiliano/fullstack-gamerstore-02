@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import OrderItem from "../components/OrderItem/OrderItem";
 import { FaShoppingBasket } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { LuTrash } from "react-icons/lu";
 
 type order = {
     id: string,
@@ -27,11 +28,7 @@ export default function Meuspedidos() {
     const { status, data } = useSession();
     const [myOrders, setOrders] = useState([]);
     const [update, setUpdate] = useState(false);
-
     const router = useRouter();
-    console.log(data)
-    console.log(status)
-
     useEffect(() => {
         const myOrders = async () => {
             const orders = await fetch("http://localhost:3000/api/purchases ").then((res) => res.json());
@@ -43,8 +40,8 @@ export default function Meuspedidos() {
         myOrders();
     }, [update]);
 
-    async function deletePurchase(id:string){
-        const response = await fetch("http://localhost:3000/api/purchases",{
+    async function deletePurchase(id: string) {
+        const response = await fetch("http://localhost:3000/api/purchases", {
             method: "DELETE",
             body: JSON.stringify({ id }),
         })
@@ -53,7 +50,7 @@ export default function Meuspedidos() {
             setUpdate(!update)
         }, 5000);
 
-        return response.json();   
+        return response.json();
     }
 
     return (
@@ -69,10 +66,14 @@ export default function Meuspedidos() {
                 </div>
                 {myOrders.map((item: order) => {
                     return <div className="my-8 border-gray-200	border rounded-xl w-8/12 mx-auto pt-6">
-                        <div className="flex flex-col w-11/12 justify-between mx-auto">
-                            <h1>NÚMERO DO PEDIDO</h1>
-                            <p className="text-sm text-gray-500">{item.id}</p>
-                            <p onClick={()=>deletePurchase(item.id)}>Test</p>
+                        <div className="flex w-11/12 justify-between mx-auto items-center">
+                            <div className="flex flex-col">
+                                <h1>NÚMERO DO PEDIDO</h1>
+                                <p className="text-sm text-gray-500">{item.id}</p>
+                            </div>
+                            <div className="border-gray-400 border p-2 rounded-md cursor-pointer w-[5%] h-[5%] text-center items-center" onClick={() => deletePurchase(item.id)}>
+                                <LuTrash size={20} className="mx-auto" />
+                            </div>
                         </div>
                         {
                             item.purchase.map((purchasedItem) => {

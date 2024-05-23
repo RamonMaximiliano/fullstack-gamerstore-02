@@ -38,24 +38,14 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 - Responsivenes
 - Loading pages 
 - DB table purchases
-- Meus pedidos pagina
-- Apply discount to base price
 - Button effects and hover (Add item to cart, plus and minus on cart, etc)
-
-CART:
-- Push Cartprods to DB
 - Display purchase message successfull
-
-PURCHASE:
-
-Email: string 
-Quantity: Number 
-Purchase: 
-
+- No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
+- Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 
+- Adicionar keys em todas as listas
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main
 https://www.figma.com/file/Y8jmabSZXxAobeUJQdI4bm/FSW-Store-[Live]?type=design&node-id=89-379&mode=design
-
 
 */

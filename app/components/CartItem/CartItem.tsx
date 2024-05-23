@@ -47,7 +47,7 @@ export default function CartItem(props: cartItem) {
     }
 
     function deleteItem(event: React.MouseEvent<HTMLDivElement>) {
-        event.stopPropagation(); 
+        event.stopPropagation();
         const deleteList = cartProducts.filter((item: cartItem) => {
             return item.id != props.id
         })

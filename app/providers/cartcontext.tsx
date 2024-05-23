@@ -14,35 +14,35 @@ type cartItem = {
 }
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-    const [open, setOpen] = useState(false);
-    const [menu, setMenu] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [menu, setMenu] = useState(false);
 
-    const [products, setProducts] = useState<Product[]>([]);
-    const [cartProducts, setCartProducts] = useState<cartItem[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [cartProducts, setCartProducts] = useState<cartItem[]>([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-          const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
-          setProducts(prods);
-      };
-      fetchData();
+  useEffect(() => {
+    const fetchData = async () => {
+      const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
+      setProducts(prods);
+    };
+    fetchData();
   }, []);
 
 
-    // Provider implementation
-    return (
-        <CartContext.Provider
-          value={{
-            setOpen,
-            open,
-            products,
-            cartProducts, 
-            setCartProducts,
-            menu,
-            setMenu
-          }}
-        >
-          {children}
-        </CartContext.Provider>
-      );
+  // Provider implementation
+  return (
+    <CartContext.Provider
+      value={{
+        setOpen,
+        open,
+        products,
+        cartProducts,
+        setCartProducts,
+        menu,
+        setMenu
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 };

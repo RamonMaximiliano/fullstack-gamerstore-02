@@ -41,8 +41,6 @@ export default function Cart() {
 
     }, [cartProducts])
 
-    console.log(cartProducts)
-
     useEffect(() => {
         const clickOutsideCart = (event: MouseEvent) => {
             if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
@@ -59,13 +57,10 @@ export default function Cart() {
             document.removeEventListener('mousedown', clickOutsideCart);
         };
     }, [setOpen]);
- 
-    async function finish(){
-        console.log(subtotal)
-        console.log(discount)
-        console.log(total)
-        
-        const response = await fetch("http://localhost:3000/api/purchases",{
+
+    async function finish() {
+
+        const response = await fetch("http://localhost:3000/api/purchases", {
             method: "POST",
             body: Buffer.from(
                 JSON.stringify({
@@ -77,7 +72,8 @@ export default function Cart() {
                 })
             ),
         });
-    } 
+        setCartProducts([])
+    }
 
     return (
         <>
@@ -130,7 +126,7 @@ export default function Cart() {
                     </div>
                     {/*VALUES END*/}
 
-                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto" onClick={()=>finish()}>FINALIZAR COMPRA</button>
+                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto" onClick={() => finish()}>FINALIZAR COMPRA</button>
                 </div>
             </div>
         </>
