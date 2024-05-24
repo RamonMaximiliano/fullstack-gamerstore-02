@@ -31,7 +31,7 @@ export default function Category({ params }: { params: { category: string } }) {
         categoryID = "b085fc16-2c7f-4a4b-8e2e-b7e5a91453b8"
     } else if (params.category === 'keyboards') {
         icon = <FaRegKeyboard/>;
-        categoryID = "593ee0da-c702-4583-85df-f5b2c3900c25"
+        categoryID = "5fa84218-5b10-4929-a842-b78b88cf563f"
     } else if (params.category === 'headphones') {
         icon = <FaHeadset/>;
         categoryID = "593ee0da-c702-4583-85df-f5b2c3900c25"

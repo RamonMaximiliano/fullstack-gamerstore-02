@@ -17,7 +17,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
     const [prodList, setProdList] = useState<Product[]>([]);
     const [quant, setQuant] = useState(1);
     const [mainPic, setMainPic] = useState(0);
-    const { open, setOpen, products, cartProducts, setCartProducts} = useContext(CartContext)
+    const { open, setOpen, products, cartProducts, setCartProducts } = useContext(CartContext)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -54,7 +54,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
         }
     }
 
-    function purchased(){
+    function purchased() {
         const itemPurchased = {
             id: prodDetail?.id,
             name: prodDetail?.name,
@@ -63,40 +63,30 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
             imageUrls: prodDetail?.imageUrls[0],
             discountPercentage: prodDetail?.discountPercentage
         }
-
-
-setCartProducts([...cartProducts,itemPurchased])
-
-
-}
+        setCartProducts([...cartProducts, itemPurchased])
+    }
 
     return (
         <>
-            <div className="w-8/12 mx-auto mb-20">
+            <div className="lg:w-8/12 mx-auto mb-20">
                 <p>
-                    <div className="items-center bg-slate-900  w-10/12 mx-auto mt-8 rounded-xl">
-                        <img src={prodDetail?.imageUrls[mainPic]} className="w-[50%] mx-auto p-3"></img>
+                    <div className="items-center bg-slate-900 w-10/12 justify-center rounded-xl  mx-auto ">
+                    <div className="items-center w-11/12 mx-auto mt-8 flex justify-center lg:h-[450px] max-w-[450px] h-[250px] p-3">
+                        <img src={prodDetail?.imageUrls[mainPic]} className="object-cover mx-auto max-w-full max-h-full" />
+                    </div>
                     </div>
                     <div className="flex mx-auto justify-between w-10/12 mt-8 flex-wrap">
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(1)}>
-                            <div className="w-[190px] mx-auto">
-                                <img src={prodDetail?.imageUrls[1]} className="m-auto my-auto max-w-full p-3" ></img>
-                            </div>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(1)}>
+                            <img src={prodDetail?.imageUrls[1]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(2)}>
-                            <div className="w-[190px] mx-auto">
-                                <img src={prodDetail?.imageUrls[2]} className="m-auto my-auto max-w-full p-3"></img>
-                            </div>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(2)}>
+                            <img src={prodDetail?.imageUrls[2]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(3)}>
-                            <div className="w-[190px] mx-auto">
-                                <img src={prodDetail?.imageUrls[3]} className="m-auto my-auto max-w-full p-3"></img>
-                            </div>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(3)}>
+                            <img src={prodDetail?.imageUrls[3]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl items-center flex mt-1 cursor-pointer" onClick={()=>setMainPic(0)}>
-                            <div className="w-[190px] mx-auto">
-                                <img src={prodDetail?.imageUrls[0]} className="m-auto my-auto max-w-full p-3"></img>
-                            </div>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(0)}>
+                            <img src={prodDetail?.imageUrls[0]} className="max-w-full max-h-full p-3" />
                         </div>
                     </div>
 
@@ -104,15 +94,6 @@ setCartProducts([...cartProducts,itemPurchased])
                         <h1 className="text-xl">{prodDetail?.name}</h1>
                         <div className="items-center flex my-2">
                             <p className="text-3xl font-bold">R$ {Number(prodDetail?.basePrice)}</p>
-                            {/*                             {Number(prodDetail!.discountPercentage) > 0 &&
-                                <div className="w-[70px] h-[30px] flex items-center bg-purple-700 justify-center ml-3 rounded-2xl">
-                                    <div className="flex items-center justify-around w-9/12">
-                                        <FaArrowDownLong />
-                                        <p>{Number(prodDetail!.discountPercentage)}</p>
-                                        <FaPercentage />
-                                    </div>
-                                </div>
-                            } */}
                         </div>
                     </div>
 
@@ -127,7 +108,7 @@ setCartProducts([...cartProducts,itemPurchased])
                         <p className="text-sm text-gray-400">{prodDetail?.description}</p><br />
                     </div>
                     <div className="w-10/12 mx-auto mb-14">
-                        <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2" onClick={()=>purchased()}>ADICIONAR AO CARRINHO</button>
+                        <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2" onClick={() => purchased()}>ADICIONAR AO CARRINHO</button>
                         <div className="p-4 bg-gray-800 w-[100%] rounded-lg my-2 flex">
                             <div className="w-10/12 flex justify-between items-center mx-auto flex-wrap">
                                 <div className="flex items-center w-[300px] justify-between flex-wrap">

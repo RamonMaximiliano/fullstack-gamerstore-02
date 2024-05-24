@@ -43,6 +43,17 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 - No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
 - Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 
 - Adicionar keys em todas as listas
+- Tests authenticated purchase etc
+
+
+
+-- HOME PAGE
+-- CATEGORY
+DETAIL
+CART
+MENU
+ORDERS
+
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main
