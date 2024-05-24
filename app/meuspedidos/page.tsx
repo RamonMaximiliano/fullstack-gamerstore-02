@@ -65,13 +65,13 @@ export default function Meuspedidos() {
                     </div>
                 </div>
                 {myOrders.map((item: order) => {
-                    return <div className="my-8 border-gray-200	border rounded-xl w-8/12 mx-auto pt-6">
+                    return <div className="my-8 border-gray-200	border rounded-xl w-8/12 mx-auto pt-6 bg-gray-950">
                         <div className="flex w-11/12 justify-between mx-auto items-center">
                             <div className="flex flex-col">
                                 <h1>NÚMERO DO PEDIDO</h1>
                                 <p className="text-sm text-gray-500">{item.id}</p>
                             </div>
-                            <div className="border-gray-400 border p-2 rounded-md cursor-pointer w-[5%] h-[5%] text-center items-center" onClick={() => deletePurchase(item.id)}>
+                            <div className="border-gray-400 border p-2 rounded-md cursor-pointer w-[5%] h-[5%] text-center items-center hover:bg-slate-800 duration-200" onClick={() => deletePurchase(item.id)}>
                                 <LuTrash size={20} className="mx-auto" />
                             </div>
                         </div>

@@ -36,11 +36,11 @@ export default function Header() {
 
             {/*HEADER START*/}
             <div className="container mx-auto text-white flex justify-between p-6 items-center border-b border-gray-500">
-                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded border-gray-500" />
+                <AiOutlineMenu size={29} onClick={() => handleMenu()} className="cursor-pointer border p-1 rounded border-gray-500 hover:bg-slate-800 duration-200 " />
                 <Link href={"/"}>
                     <h1 className="font-bold text-2xl cursor-pointer"><span className="text-purple-600">Gamer</span> Store</h1>
                 </Link>
-                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500" onClick={() => handleCart()} />
+                <AiOutlineShoppingCart size={35} className="cursor-pointer border p-1 rounded border-gray-500 hover:bg-slate-800 duration-200 " onClick={() => handleCart()} />
             </div>
             {/*HEADER END*/}
         </>

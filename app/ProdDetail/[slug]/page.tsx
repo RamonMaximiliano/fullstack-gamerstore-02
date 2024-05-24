@@ -71,21 +71,21 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
             <div className="lg:w-8/12 mx-auto mb-20">
                 <p>
                     <div className="items-center bg-slate-900 w-10/12 justify-center rounded-xl  mx-auto ">
-                    <div className="items-center w-11/12 mx-auto mt-8 flex justify-center lg:h-[450px] max-w-[450px] h-[250px] p-3">
+                    <div className="items-center w-11/12 mx-auto mt-8 flex justify-center lg:h-[450px] max-w-[450px] h-[250px] p-2">
                         <img src={prodDetail?.imageUrls[mainPic]} className="object-cover mx-auto max-w-full max-h-full" />
                     </div>
                     </div>
                     <div className="flex mx-auto justify-between w-10/12 mt-8 flex-wrap">
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(1)}>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(1)}>
                             <img src={prodDetail?.imageUrls[1]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(2)}>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(2)}>
                             <img src={prodDetail?.imageUrls[2]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(3)}>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(3)}>
                             <img src={prodDetail?.imageUrls[3]} className="max-w-full max-h-full p-3" />
                         </div>
-                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-1 cursor-pointer" onClick={() => setMainPic(0)}>
+                        <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(0)}>
                             <img src={prodDetail?.imageUrls[0]} className="max-w-full max-h-full p-3" />
                         </div>
                     </div>
@@ -98,9 +98,9 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                     </div>
 
                     <div className="w-10/12 mx-auto my-4 flex items-center">
-                        <MdKeyboardArrowLeft size={30} className="border border-gray-500 rounded-sm cursor-pointer" onClick={() => quantMinus()} />
+                        <MdKeyboardArrowLeft size={30} className="border border-gray-500 hover:bg-slate-800 duration-200 rounded-sm cursor-pointer" onClick={() => quantMinus()} />
                         <p className="mx-4">{quant}</p>
-                        <MdKeyboardArrowRight size={30} className="border border-gray-500 rounded-sm cursor-pointer" onClick={() => quantPlus()} />
+                        <MdKeyboardArrowRight size={30} className="border border-gray-500 rounded-sm cursor-pointer hover:bg-slate-800 duration-200" onClick={() => quantPlus()} />
                     </div>
 
                     <div className="w-10/12 mx-auto my-4">
@@ -108,7 +108,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                         <p className="text-sm text-gray-400">{prodDetail?.description}</p><br />
                     </div>
                     <div className="w-10/12 mx-auto mb-14">
-                        <button className="p-4 bg-purple-800 w-[100%] rounded-lg my-2" onClick={() => purchased()}>ADICIONAR AO CARRINHO</button>
+                        <button className="p-4 bg-purple-800 hover:bg-purple-600 w-[100%] rounded-lg my-2 duration-200" onClick={() => purchased()}>ADICIONAR AO CARRINHO</button>
                         <div className="p-4 bg-gray-800 w-[100%] rounded-lg my-2 flex">
                             <div className="w-10/12 flex justify-between items-center mx-auto flex-wrap">
                                 <div className="flex items-center w-[300px] justify-between flex-wrap">

@@ -57,7 +57,7 @@ export default function HeaderMenu() {
     
     return (
         <>
-            <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10 rounded-br-lg" ref={menuRef as React.RefObject<HTMLDivElement>}>
+            <div className="w-4/5 absolute bg-gray-950 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10 rounded-br-lg" ref={menuRef as React.RefObject<HTMLDivElement>}>
                 <div className="flex justify-end p-2 duration-200">
                     <RxCross2 size={20} onClick={() => { setMenu(false) }} className="cursor-pointer" />
                 </div>
@@ -81,21 +81,21 @@ export default function HeaderMenu() {
                 }
                 {status === "authenticated" &&
                     (
-                        <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm cursor-pointer" onClick={() => handleLogOut()}>
+                        <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm  text-sm cursor-pointer hover:bg-slate-800 duration-200 " onClick={() => handleLogOut()}>
                             <CiLogout size={18} className="mr-3" />
                             <p>Fazer Logout</p>
                         </div>
                     )
                 }
-                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handleInicio()}>
+                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer hover:bg-slate-800 duration-200 " onClick={() => handleInicio()}>
                     <FiHome size={18} className="mr-3" />
                     <p>Início</p>
                 </div>
-                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer" onClick={() => handlePedidos()}>
+                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer hover:bg-slate-800 duration-200 " onClick={() => handlePedidos()}>
                     <GoChecklist size={18} className="mr-3" />
                     <p>Meus Pedidos</p>
                 </div>
-                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer mb-6" onClick={() => handleCatalog()}>
+                <div className="flex w-11/12 border-2 p-3 mx-auto items-center my-1 rounded-sm text-sm cursor-pointer mb-6 hover:bg-slate-800 duration-200 " onClick={() => handleCatalog()}>
                     <GrCatalog size={18} className="mr-3" />
                     <p>Catálogo</p>
                 </div>

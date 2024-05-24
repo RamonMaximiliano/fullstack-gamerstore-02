@@ -79,7 +79,7 @@ export default function Cart() {
         <>
             <div className="w-full flex justify-end">
 
-                <div className="w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10" ref={cartRef as React.RefObject<HTMLDivElement>}>
+                <div className="w-3/5 absolute bg-gray-950 flex flex-col duration-200 z-10 rounded-bl-lg" ref={cartRef as React.RefObject<HTMLDivElement>}>
 
                     {/*HEADER START*/}
                     <div className="flex items-center justify-between w-11/12 mx-auto my-4">
@@ -126,7 +126,7 @@ export default function Cart() {
                     </div>
                     {/*VALUES END*/}
 
-                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto" onClick={() => finish()}>FINALIZAR COMPRA</button>
+                    <button className="p-4 bg-purple-800 w-11/12 rounded-lg my-8 mx-auto hover:bg-purple-600 duration-200" onClick={() => finish()}>FINALIZAR COMPRA</button>
                 </div>
             </div>
         </>

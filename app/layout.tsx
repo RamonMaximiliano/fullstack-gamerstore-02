@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
-  const test = "Hello there"
 
   return (
     <html lang="en">
@@ -37,23 +36,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 - Responsivenes
 - Loading pages 
-- DB table purchases
-- Button effects and hover (Add item to cart, plus and minus on cart, etc)
 - Display purchase message successfull
 - No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
 - Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 
 - Adicionar keys em todas as listas
 - Tests authenticated purchase etc
-
-
-
--- HOME PAGE
--- CATEGORY
-DETAIL
-CART
-MENU
-ORDERS
-
 
 https://fsw-store-ashy.vercel.app/
 https://github.com/rafaelluiis2315/fsw-store/tree/main

@@ -69,16 +69,16 @@ export default function CartItem(props: cartItem) {
                         <p>R$ {(props.price - props.discountPercentage) * quant} <span className="text-gray-500 text-sm line-through">R$ {props.price * quant}</span></p>
                     </div>
                     <div className="flex items-center w-[130px] justify-between">
-                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => minus()}>
+                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer hover:bg-slate-800 duration-200 " onClick={() => minus()}>
                             <FaAngleLeft size={20} />
                         </div>
                         <p>{quant}</p>
-                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={() => plus()}>
+                        <div className="border-gray-400 border p-2 rounded-md cursor-pointer hover:bg-slate-800 duration-200 " onClick={() => plus()}>
                             <FaAngleRight size={20} />
                         </div>
                     </div>
                 </div>
-                <div className="border-gray-400 border p-2 rounded-md cursor-pointer" onClick={deleteItem}>
+                <div className="border-gray-400 border p-2 rounded-md cursor-pointer hover:bg-slate-800 duration-200 " onClick={deleteItem}>
                     <LuTrash size={20} />
                 </div>
             </div>
