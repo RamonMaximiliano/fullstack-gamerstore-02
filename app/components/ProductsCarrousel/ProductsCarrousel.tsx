@@ -9,7 +9,7 @@ export default function ProductsCarrousel({item}:any) {
         <div className="flex w-[100%] mx-auto flex-wrap justify-between">
                 {
                     item.map((item:any) => {
-                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
+                        return <ProdItem id={item.id} key={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
                     })
                 }
                 </div> 

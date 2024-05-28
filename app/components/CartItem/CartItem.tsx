@@ -56,7 +56,7 @@ export default function CartItem(props: cartItem) {
 
     return (
         <>
-            <div className="flex items-center w-11/12 justify-between mx-auto">
+            <div className="flex items-center lg:w-11/12 justify-between lg:mx-auto mr-2">
                 <div className="w-[120px] h-[120px] bg-slate-950 rounded-2xl items-center flex mt-1 cursor-pointer">
                     <div className="w-[190px] mx-auto">
                         <img src={props.imageUrls} className="m-auto my-auto max-w-full p-3" alt="Image"></img>

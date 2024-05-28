@@ -79,7 +79,7 @@ export default function Cart() {
         <>
             <div className="w-full flex justify-end">
 
-                <div className="w-3/5 absolute bg-gray-950 flex flex-col duration-200 z-10 rounded-bl-lg" ref={cartRef as React.RefObject<HTMLDivElement>}>
+                <div className="w-5/5 lg:w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10 rounded-bl-lg" ref={cartRef as React.RefObject<HTMLDivElement>}>
 
                     {/*HEADER START*/}
                     <div className="flex items-center justify-between w-11/12 mx-auto my-4">

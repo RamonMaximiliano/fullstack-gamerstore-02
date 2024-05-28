@@ -84,42 +84,42 @@ export default function Home() {
 
       <div className="grid grid-cols-2 container mx-auto items-center text-center my-10">
         <Link href={"/Category/keyboards"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <FaRegKeyboard className="mr-4" />
             <p>Teclados</p>
           </div>
         </Link>
 
         <Link href={"/Category/headphones"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl  lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <FaHeadset className="mr-4" />
             <p>Fones</p>
           </div>
         </Link>
 
         <Link href={"/Category/monitors"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl  lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <MdMonitor className="mr-4" />
             <p>Monitores</p>
           </div>
         </Link>
 
         <Link href={"/Category/mouses"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl  lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <FaMouse className="mr-4" />
             <p>Mouses</p>
           </div>
         </Link>
 
         <Link href={"/Category/mousepads"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl  lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <FaRegSquare className="mr-4" />
             <p>Mousespads</p>
           </div>
         </Link>
 
         <Link href={"/Category/speakers"}>
-          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl w-2/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
+          <div className="flex items-center p-2 justify-center border border-gray-500 rounded-xl  lg:w-2/4 w-3/4 mx-auto my-2 cursor-pointer hover:bg-slate-800 duration-200 ">
             <RiSurroundSoundLine className="mr-4" />
             <p>Speakers</p>
           </div>

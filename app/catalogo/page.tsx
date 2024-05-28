@@ -27,12 +27,11 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="flex w-7/12 flex-wrap mx-auto mb-20">
+                <div className="flex w-10/12 flex-wrap mx-auto mb-20 lg:w-7/12">
                     {
                         categories.map((item) => {
                             return <Link href={`/Category/${item.slug}`}>
-                                <div className="flex flex-col items-center justify-center bg-slate-900 rounded-2xl w-[250px] mx-6 my-6 cursor-pointer">
-
+                                <div className="flex flex-col items-center justify-center bg-slate-900 rounded-2xl w-[250px] mx-6 my-6 cursor-pointer" key={item.id}>
                                     <div className="w-[250px]">
                                         <div className="bg-purple-900 w-[250px] h-[250px] items-center rounded-t-2xl flex">
                                             <div className="w-[190px] mx-auto">

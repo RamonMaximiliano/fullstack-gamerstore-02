@@ -34,12 +34,10 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
-- Responsivenes
 - Loading pages 
 - Display purchase message successfull
 - No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
 - Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 
-- Adicionar keys em todas as listas
 - Tests authenticated purchase etc
 
 https://fsw-store-ashy.vercel.app/

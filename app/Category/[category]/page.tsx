@@ -68,7 +68,7 @@ export default function Category({ params }: { params: { category: string } }) {
                 <div className="flex w-10/12 flex-wrap mx-auto">
                 {
                     categoryListFiltered.map((item: Product) => {
-                        return <ProdItem id={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
+                        return <ProdItem id={item.id} key={item.id} discount={item.discountPercentage} name={item.name} image={item.imageUrls} price={Number(item.basePrice)} slug={item.slug}/>
                     })
 
                 }

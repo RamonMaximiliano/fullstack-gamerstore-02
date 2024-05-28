@@ -65,7 +65,7 @@ export default function Meuspedidos() {
                     </div>
                 </div>
                 {myOrders.map((item: order) => {
-                    return <div className="my-8 border-gray-200	border rounded-xl w-8/12 mx-auto pt-6 bg-gray-950">
+                    return <div className="my-8 border-gray-200	border rounded-xl w-8/12 mx-auto pt-6 bg-gray-900" key={item.id}>
                         <div className="flex w-11/12 justify-between mx-auto items-center">
                             <div className="flex flex-col">
                                 <h1>NÚMERO DO PEDIDO</h1>
@@ -77,7 +77,7 @@ export default function Meuspedidos() {
                         </div>
                         {
                             item.purchase.map((purchasedItem) => {
-                                return <div>
+                                return <div key={purchasedItem.id}>
                                     <OrderItem id={purchasedItem.id}
                                         name={purchasedItem.name}
                                         price={Number(purchasedItem.price)}
