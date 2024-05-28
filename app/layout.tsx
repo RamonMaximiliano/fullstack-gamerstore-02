@@ -34,7 +34,6 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 /*
 
-- Loading pages 
 - Display purchase message successfull
 - No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
 - Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 

@@ -66,6 +66,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
         setCartProducts([...cartProducts, itemPurchased])
     }
 
+    
     return (
         <>
             <div className="lg:w-8/12 mx-auto mb-20">
