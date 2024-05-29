@@ -22,7 +22,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
+      const prods = await fetch("/api/products").then((res) => res.json());
       setProducts(prods);
     };
     fetchData();

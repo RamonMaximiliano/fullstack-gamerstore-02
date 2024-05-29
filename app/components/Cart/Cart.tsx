@@ -61,7 +61,7 @@ export default function Cart() {
     async function finish() {
         if(status === "authenticated" && cartProducts.length > 0){
 
-        const response = await fetch("http://localhost:3000/api/purchases", {
+        const response = await fetch("/api/purchases", {
             method: "POST",
             body: Buffer.from(
                 JSON.stringify({

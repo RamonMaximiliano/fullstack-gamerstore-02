@@ -31,7 +31,7 @@ export default function Meuspedidos() {
     const router = useRouter();
     useEffect(() => {
         const myOrders = async () => {
-            const orders = await fetch("http://localhost:3000/api/purchases ").then((res) => res.json());
+            const orders = await fetch("/api/purchases ").then((res) => res.json());
             const ordersByUser = orders.filter((item: order) => {
                 return item.email === data?.user?.email
             })
@@ -41,7 +41,7 @@ export default function Meuspedidos() {
     }, [update]);
 
     async function deletePurchase(id: string) {
-        const response = await fetch("http://localhost:3000/api/purchases", {
+        const response = await fetch("/api/purchases", {
             method: "DELETE",
             body: JSON.stringify({ id }),
         })

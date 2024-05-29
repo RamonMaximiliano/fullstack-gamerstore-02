@@ -21,7 +21,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
+            const prods = await fetch("/api/products").then((res) => res.json());
             const endProd = prods.filter((item: Product) => {
                 return item.slug === params.slug
             })
@@ -32,7 +32,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const prods = await fetch("http://localhost:3000/api/products").then((res) => res.json());
+            const prods = await fetch("/api/products").then((res) => res.json());
             const endProd = prods.filter((item: Product) => {
                 return item.categoryId === prodDetail?.categoryId
             })
