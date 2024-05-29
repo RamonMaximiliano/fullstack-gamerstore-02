@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Category } from "@prisma/client";
 import { GrCatalog } from "react-icons/gr";
 
-export default function Footer() {
+export default function Catalog() {
     const [categories, setCategories] = useState<Category[]>([]);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export default function Footer() {
                 <div className="flex w-10/12 flex-wrap mx-auto mb-20 lg:w-7/12">
                     {
                         categories.map((item) => {
-                            return <Link href={`/Category/${item.slug}`}>
+                            return <Link href={`/Category/${item.slug}`} key={item.id}>
                                 <div className="flex flex-col items-center justify-center bg-slate-900 rounded-2xl w-[250px] mx-6 my-6 cursor-pointer" key={item.id}>
                                     <div className="w-[250px]">
                                         <div className="bg-purple-900 w-[250px] h-[250px] items-center rounded-t-2xl flex">

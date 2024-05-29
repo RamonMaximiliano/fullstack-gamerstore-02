@@ -28,7 +28,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
             setProdDetail(endProd[0])
         }
         fetchData();
-    }, []);
+    });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,21 +74,21 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
                 <p>
                     <div className="items-center bg-slate-900 w-10/12 justify-center rounded-xl  mx-auto ">
                     <div className="items-center w-11/12 mx-auto mt-8 flex justify-center lg:h-[450px] max-w-[450px] h-[250px] p-2">
-                        <img src={prodDetail?.imageUrls[mainPic]} className="object-cover mx-auto max-w-full max-h-full" />
+                        <img src={prodDetail?.imageUrls[mainPic]} className="object-cover mx-auto max-w-full max-h-full" alt="Main picture"/>
                     </div>
                     </div>
                     <div className="flex mx-auto justify-between w-10/12 mt-8 flex-wrap">
                         <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(1)}>
-                            <img src={prodDetail?.imageUrls[1]} className="max-w-full max-h-full p-3" />
+                            <img src={prodDetail?.imageUrls[1]} className="max-w-full max-h-full p-3" alt="1 picture"/>
                         </div>
                         <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(2)}>
-                            <img src={prodDetail?.imageUrls[2]} className="max-w-full max-h-full p-3" />
+                            <img src={prodDetail?.imageUrls[2]} className="max-w-full max-h-full p-3" alt="2 picture" />
                         </div>
                         <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(3)}>
-                            <img src={prodDetail?.imageUrls[3]} className="max-w-full max-h-full p-3" />
+                            <img src={prodDetail?.imageUrls[3]} className="max-w-full max-h-full p-3" alt="3 picture"/>
                         </div>
                         <div className="w-[120px] h-[120px] bg-slate-900 rounded-2xl flex items-center justify-center mt-2 cursor-pointer" onClick={() => setMainPic(0)}>
-                            <img src={prodDetail?.imageUrls[0]} className="max-w-full max-h-full p-3" />
+                            <img src={prodDetail?.imageUrls[0]} className="max-w-full max-h-full p-3" alt="4 picture"/>
                         </div>
                     </div>
 

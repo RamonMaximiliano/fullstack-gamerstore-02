@@ -53,7 +53,7 @@ export default function HeaderMenu() {
         return () => {
             document.removeEventListener('click', clickOutsideCart);
         };
-    }, []);
+    });
     
     return (
         <>

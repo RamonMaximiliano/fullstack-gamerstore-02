@@ -52,7 +52,7 @@ export default function Category({ params }: { params: { category: string } }) {
         })
         setCategoryListFiltered(filtered)
 
-    },categoryList)    
+    },[categoryList])    
 
     return (
         <>
