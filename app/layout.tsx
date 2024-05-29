@@ -18,14 +18,19 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={inter.className}>
-      <NextAuthProvider>
-        <CartProvider>
-        <Header/>
-        {children}   
-        <Footer/>  
-        </CartProvider> 
+        <NextAuthProvider>
+          <CartProvider>
+            {/*Essas divs abaixo é para jogar o footer sempre para o bottom total idependente de quantos pedidos na pagina de pedidos ou do tamanho do conteudo na tela*/}
+            <div className="flex flex-col h-screen">
+              <Header />
+              <div className="flex-1">
+                {children}
+              </div>
+              <Footer />
+            </div>
+          </CartProvider>
         </NextAuthProvider>
-        </body>
+      </body>
     </html>
   );
 }
