@@ -49,7 +49,7 @@ export default function Meuspedidos() {
             router.refresh()
             setUpdate(!update)
         }, 5000);
-
+        window.alert("Pedido deletado com sucesso!")
         return response.json();
     }
 
