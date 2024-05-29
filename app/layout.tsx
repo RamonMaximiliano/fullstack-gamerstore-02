@@ -31,16 +31,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 }
 
 
-
 /*
 
-- Display purchase message successfull
-- No Header, adicionar efeito de contador no icono do carrinho caso o carrinho não esteja vazio
-- Adicionar efeito de desfoque no resto quando abre o menu ou o carrinho 
-- Tests authenticated purchase etc
-
-https://fsw-store-ashy.vercel.app/
-https://github.com/rafaelluiis2315/fsw-store/tree/main
+Project based on:
 https://www.figma.com/file/Y8jmabSZXxAobeUJQdI4bm/FSW-Store-[Live]?type=design&node-id=89-379&mode=design
 
 */

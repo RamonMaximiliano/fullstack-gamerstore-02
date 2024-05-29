@@ -64,6 +64,7 @@ export default function ProdDetail({ params }: { params: { slug: string } }) {
             discountPercentage: prodDetail?.discountPercentage
         }
         setCartProducts([...cartProducts, itemPurchased])
+        window.alert("Item adicionado ao carrinho!")
     }
 
     

@@ -57,7 +57,7 @@ export default function HeaderMenu() {
     
     return (
         <>
-            <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10 rounded-br-lg" ref={menuRef as React.RefObject<HTMLDivElement>}>
+            <div className="w-4/5 absolute bg-gray-900 flex flex-col pb-2 pr-2 pl-2 duration-200 z-10 rounded-br-lg border-r-2 border-b-2 border-gray-400" ref={menuRef as React.RefObject<HTMLDivElement>}>
                 <div className="flex justify-end p-2 duration-200">
                     <RxCross2 size={20} onClick={() => { setMenu(false) }} className="cursor-pointer" />
                 </div>

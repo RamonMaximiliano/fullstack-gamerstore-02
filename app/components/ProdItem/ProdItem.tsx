@@ -46,10 +46,3 @@ export default function ProdItem(props: prod) {
     );
 }
 
-
-/* 
-<div class="flex justify-center items-center h-screen">
-  <div class="bg-gray-200 p-6 rounded-lg">
-    <!-- Your content here -->
-  </div>
-</div> */

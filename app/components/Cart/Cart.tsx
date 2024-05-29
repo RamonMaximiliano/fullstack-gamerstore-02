@@ -59,6 +59,7 @@ export default function Cart() {
     }, [setOpen]);
 
     async function finish() {
+        if(status === "authenticated" && cartProducts.length > 0){
 
         const response = await fetch("http://localhost:3000/api/purchases", {
             method: "POST",
@@ -73,13 +74,18 @@ export default function Cart() {
             ),
         });
         setCartProducts([])
+        window.alert("Compra finalizada com sucesso!")
+    } else if (status === "authenticated" && cartProducts.length == 0){
+        window.alert("Seu carrinho de compras esta vazio!")
+    } else {
+        window.alert("Por favor logue para finalizar sua compra!")
+    }
     }
 
     return (
         <>
             <div className="w-full flex justify-end">
-
-                <div className="w-5/5 lg:w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10 rounded-bl-lg" ref={cartRef as React.RefObject<HTMLDivElement>}>
+                <div className="w-5/5 lg:w-3/5 absolute bg-gray-900 flex flex-col duration-200 z-10 rounded-bl-lg border-l-2 border-b-2 border-gray-400" ref={cartRef as React.RefObject<HTMLDivElement>}>
 
                     {/*HEADER START*/}
                     <div className="flex items-center justify-between w-11/12 mx-auto my-4">
