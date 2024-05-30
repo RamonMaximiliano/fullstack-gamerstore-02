@@ -1,6 +1,6 @@
 # Fullstack GamerStore
 
-## Next JS - Next auth - Google Authentication - Back end - Tailwind - Banco de dados
+## Next JS - Prisma - Google Authentication - Back end - Tailwind - Banco de dados
   
 ### Português:
 
@@ -9,7 +9,7 @@ Meu segundo projeto Fullstack! Um E-commerce de produtos de informática.
 
 ## Tecnologias Utilizadas:
 - Next JS
-- Next Auth
+- Prisma
 - Google Authentication
 - Back end
 - Tailwind
@@ -25,7 +25,7 @@ My second Fullstack project! An e-commerce store for computer products.
 
 ## Technologies Used:
 - Next JS
-- Next Auth
+- Prisma
 - Google Authentication
 - Back end
 - Tailwind
